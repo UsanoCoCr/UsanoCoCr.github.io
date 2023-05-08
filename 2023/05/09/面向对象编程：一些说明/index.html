@@ -1,0 +1,478 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  
+  <title>Hexo</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="c++面向对象编程：一些说明">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Hexo">
+<meta property="og:url" content="http://example.com/2023/05/09/%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1%E7%BC%96%E7%A8%8B%EF%BC%9A%E4%B8%80%E4%BA%9B%E8%AF%B4%E6%98%8E/index.html">
+<meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="c++面向对象编程：一些说明">
+<meta property="og:locale" content="en_US">
+<meta property="og:image" content="https://tse4-mm.cn.bing.net/th/id/OIP-C.ttNMpKxP6hLtw5MUUtNpZgHaDd?w=349&h=163&c=7&r=0&o=5&dpr=1.8&pid=1.7">
+<meta property="article:published_time" content="2023-05-08T17:53:52.735Z">
+<meta property="article:modified_time" content="2023-05-08T17:55:14.762Z">
+<meta property="article:author" content="John Doe">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://tse4-mm.cn.bing.net/th/id/OIP-C.ttNMpKxP6hLtw5MUUtNpZgHaDd?w=349&h=163&c=7&r=0&o=5&dpr=1.8&pid=1.7">
+  
+    <link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml">
+  
+  
+    <link rel="shortcut icon" href="/favicon.png">
+  
+  
+    
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/typeface-source-code-pro@0.0.71/index.min.css">
+
+  
+  
+<link rel="stylesheet" href="/css/style.css">
+
+  
+    
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.min.css">
+
+  
+<meta name="generator" content="Hexo 6.3.0"></head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">Hexo</a>
+      </h1>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://example.com"></form>
+      </div>
+    </div>
+  </div>
+</header>
+
+      <div class="outer">
+        <section id="main"><article id="post-面向对象编程：一些说明" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/2023/05/09/%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1%E7%BC%96%E7%A8%8B%EF%BC%9A%E4%B8%80%E4%BA%9B%E8%AF%B4%E6%98%8E/" class="article-date">
+  <time class="dt-published" datetime="2023-05-08T17:53:52.735Z" itemprop="datePublished">2023-05-09</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <h1 id="c-面向对象编程：一些说明"><a href="#c-面向对象编程：一些说明" class="headerlink" title="c++面向对象编程：一些说明"></a>c++面向对象编程：一些说明</h1><span id="more"></span>
+
+<ul>
+<li><a href="#c%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1%E7%BC%96%E7%A8%8B%E4%B8%80%E4%BA%9B%E8%AF%B4%E6%98%8E">c++面向对象编程：一些说明</a></li>
+<li><a href="#%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1%E7%BC%96%E7%A8%8B%E7%9A%84%E5%9F%BA%E6%9C%AC%E7%BB%93%E6%9E%84">面向对象编程的基本结构</a><ul>
+<li><a href="#%E5%B8%B8%E9%87%8F%E4%B8%8E%E5%8F%AA%E8%AF%BB%E5%8F%98%E9%87%8F">常量与只读变量</a><ul>
+<li><a href="#%E5%B8%B8%E9%87%8F">常量</a></li>
+<li><a href="#const%E5%92%8C%E5%BC%95%E7%94%A8">const和引用</a></li>
+<li><a href="#const%E4%B8%8E%E6%8C%87%E9%92%88">const与指针</a></li>
+</ul>
+</li>
+<li><a href="#%E5%87%BD%E6%95%B0%E7%9A%84%E9%AB%98%E7%BA%A7%E7%89%B9%E6%80%A7">函数的高级特性</a><ul>
+<li><a href="#%E7%BC%BA%E7%9C%81%E5%87%BD%E6%95%B0">缺省函数</a></li>
+<li><a href="#%E5%87%BD%E6%95%B0%E9%87%8D%E8%BD%BD%E7%9A%84%E5%A4%8D%E6%9D%82%E6%83%85%E5%86%B5">函数重载的复杂情况</a></li>
+<li><a href="#%E5%87%BD%E6%95%B0%E6%8C%87%E9%92%88">函数指针</a></li>
+<li><a href="#lambda%E8%A1%A8%E8%BE%BE%E5%BC%8F">lambda表达式</a></li>
+<li><a href="#%E5%91%BD%E5%90%8D%E7%A9%BA%E9%97%B4">命名空间</a></li>
+</ul>
+</li>
+<li><a href="#%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1%E7%BC%96%E7%A8%8B">面向对象编程</a><ul>
+<li><a href="#%E7%B1%BB%E5%9E%8B%E8%BD%AC%E6%8D%A2">类型转换</a></li>
+<li><a href="#%E9%9D%99%E6%80%81%E6%88%90%E5%91%98">静态成员</a></li>
+</ul>
+</li>
+<li><a href="#oop%E4%B8%AD%E7%9A%84%E5%8F%AA%E8%AF%BB">oop中的只读</a></li>
+</ul>
+</li>
+<li><a href="#%E8%BF%90%E7%AE%97%E7%AC%A6%E9%87%8D%E8%BD%BD">运算符重载</a><ul>
+<li><a href="#%E6%B5%85%E5%A4%8D%E5%88%B6%E4%B8%8E%E6%B7%B1%E5%A4%8D%E5%88%B6">浅复制与深复制</a><ul>
+<li><a href="#%E5%8F%8B%E5%85%83%E7%9A%84%E5%A5%BD%E5%A4%84">友元的好处</a></li>
+</ul>
+</li>
+<li><a href="#%E7%B1%BB%E5%9E%8B%E8%BD%AC%E6%8D%A2%E9%87%8D%E8%BD%BD">类型转换重载</a></li>
+<li><a href="#%E6%B5%81%E6%8F%92%E5%85%A5%E6%8F%90%E5%8F%96%E8%BF%90%E7%AE%97%E7%AC%A6%E9%87%8D%E8%BD%BD">流插入&#x2F;提取运算符重载</a></li>
+<li><a href="#%E8%87%AA%E5%A2%9E%E5%87%8F%E8%BF%90%E7%AE%97%E7%AC%A6%E9%87%8D%E8%BD%BD">自增减运算符重载</a></li>
+<li><a href="#%E5%87%BD%E6%95%B0%E8%B0%83%E7%94%A8%E8%BF%90%E7%AE%97%E7%AC%A6%E9%87%8D%E8%BD%BD">函数调用运算符重载</a></li>
+</ul>
+</li>
+<li><a href="#%E7%BB%A7%E6%89%BF%E5%92%8C%E5%A4%9A%E6%80%81">继承和多态</a><ul>
+<li><a href="#%E6%B4%BE%E7%94%9F%E7%B1%BB%E6%88%90%E5%91%98%E7%9A%84%E5%8F%AF%E8%A7%81%E6%80%A7">派生类成员的可见性</a></li>
+<li><a href="#%E6%B4%BE%E7%94%9F%E7%B1%BB%E5%88%B0%E5%9F%BA%E7%B1%BB">派生类到基类</a><ul>
+<li><a href="#%E6%B4%BE%E7%94%9F%E7%B1%BB%E5%88%B0%E5%9F%BA%E7%B1%BB%E7%9A%84%E9%9A%90%E5%BC%8F%E8%BD%AC%E6%8D%A2">派生类到基类的隐式转换</a></li>
+<li><a href="#%E5%9F%BA%E7%B1%BB%E7%9A%84%E5%BC%95%E7%94%A8%E5%88%B0%E6%B4%BE%E7%94%9F%E7%B1%BB">基类的引用到派生类</a></li>
+<li><a href="#%E5%9F%BA%E7%B1%BB%E7%9A%84%E6%8C%87%E9%92%88%E5%88%B0%E6%B4%BE%E7%94%9F%E7%B1%BB">基类的指针到派生类</a></li>
+</ul>
+</li>
+<li><a href="#%E8%BF%90%E8%A1%8C%E6%97%B6%E7%B1%BB%E5%9E%8B%E8%AF%86%E5%88%AB">运行时类型识别</a></li>
+<li><a href="#%E5%9B%9B%E7%A7%8D%E7%B1%BB%E5%9E%8B%E8%BD%AC%E6%8D%A2">四种类型转换</a><ul>
+<li><a href="#static_cast">static_cast</a></li>
+<li><a href="#dynamic_cast">dynamic_cast</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a href="#%E6%A8%A1%E6%9D%BF">模板</a><ul>
+<li><a href="#%E9%9D%9E%E7%B1%BB%E5%9E%8B%E6%A8%A1%E6%9D%BF%E5%8F%82%E6%95%B0">非类型模板参数</a></li>
+<li><a href="#%E6%A8%A1%E6%9D%BF%E7%9A%84%E7%89%B9%E5%8C%96%E4%B8%8E%E5%AE%9E%E4%BE%8B%E5%8C%96">模板的特化与实例化</a></li>
+<li><a href="#%E6%A0%87%E5%87%86%E6%A8%A1%E6%9D%BF%E5%BA%93">标准模板库</a><ul>
+<li><a href="#%E5%AE%B9%E5%99%A8">容器</a><ul>
+<li><a href="#%E9%A1%BA%E5%BA%8F%E5%AE%B9%E5%99%A8">顺序容器</a></li>
+<li><a href="#%E5%85%B3%E8%81%94%E5%AE%B9%E5%99%A8">关联容器</a></li>
+<li><a href="#%E5%AE%B9%E5%99%A8%E9%80%82%E9%85%8D%E5%99%A8">容器适配器</a></li>
+</ul>
+</li>
+<li><a href="#%E8%BF%AD%E4%BB%A3%E5%99%A8">迭代器</a></li>
+<li><a href="#stdcopy">std::copy</a><ul>
+<li><a href="#stdcopy_if">std::copy_if</a></li>
+</ul>
+</li>
+<li><a href="#%E5%87%BD%E6%95%B0%E5%AF%B9%E8%B1%A1">函数对象</a></li>
+<li><a href="#%E8%A7%86%E5%9B%BE">视图</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a href="#%E4%B9%A0%E9%A2%98%E7%B2%BE%E9%80%89">习题精选</a></li>
+</ul>
+<blockquote>
+<p>写在前面<br>已经很久没有写代码了，包括自己高中的时候学的一些小伎俩基本也忘干净了，现在对于计算机课来说还是很紧张的。所以打算再写一篇文档，以复刻ai基础考前抱佛脚熟读讲义之便。<br>唉</p>
+<p>哦哦，不过这个markdown转换成网页或者pdf应该会相对的好看一些，毕竟它不需要什么图片和数学公式，哪天我一定要学一学比较专业的前端，感觉自己对这个还挺有兴趣的</p>
+</blockquote>
+<h1 id="面向对象编程的基本结构"><a href="#面向对象编程的基本结构" class="headerlink" title="面向对象编程的基本结构"></a>面向对象编程的基本结构</h1><h2 id="常量与只读变量"><a href="#常量与只读变量" class="headerlink" title="常量与只读变量"></a>常量与只读变量</h2><h3 id="常量"><a href="#常量" class="headerlink" title="常量"></a>常量</h3><p>常量指的是在<strong>编译</strong>期间就可以确定的值，且整个运行期间常量的值不会发生变化。<br>在c++代码中，我们可以使用constexpr来表示常量，常量拥有可以在编译时就确定的特性，所以常量有着非常奇妙的应用：</p>
+<details>
+<summary>变参模板：包展开error</summary>
+
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;string&gt;</span></span></span><br><span class="line"><span class="function"><span class="keyword">template</span>&lt;<span class="keyword">typename</span> T, <span class="keyword">typename</span>... Us&gt;</span></span><br><span class="line"><span class="function"><span class="type">void</span> <span class="title">f</span><span class="params">(T t,Us... us)</span></span>;</span><br><span class="line"><span class="function"><span class="keyword">template</span>&lt;<span class="keyword">typename</span>... Ts&gt;</span></span><br><span class="line"><span class="function"><span class="type">void</span> <span class="title">print</span><span class="params">(Ts... ts)</span></span>;</span><br><span class="line"><span class="function"><span class="keyword">template</span>&lt;<span class="keyword">typename</span> T, <span class="keyword">typename</span>... Us&gt;</span></span><br><span class="line"><span class="function"><span class="type">void</span> <span class="title">f</span><span class="params">(T t, Us... us)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">if</span> (<span class="keyword">sizeof</span>...(us) == <span class="number">0</span>)&#123;</span><br><span class="line">        std::cout &lt;&lt; t &lt;&lt; std::endl;</span><br><span class="line">        <span class="keyword">return</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">else</span>&#123;</span><br><span class="line">        std::cout &lt;&lt; t;</span><br><span class="line">        <span class="built_in">print</span>(us...);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">template</span>&lt;<span class="keyword">typename</span>... Ts&gt;</span></span><br><span class="line"><span class="function"><span class="type">void</span> <span class="title">print</span><span class="params">(Ts... ts)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">if</span> (<span class="keyword">sizeof</span>...(ts) == <span class="number">0</span>)&#123;</span><br><span class="line">        std::cout&lt;&lt;std::endl;</span><br><span class="line">        <span class="keyword">return</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">else</span>&#123;</span><br><span class="line">        <span class="built_in">f</span>(ts...);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    <span class="function">std::string <span class="title">n</span><span class="params">(<span class="string">&quot;nullptr&quot;</span>)</span></span>;</span><br><span class="line">    <span class="built_in">print</span>(<span class="literal">false</span>);</span><br><span class="line">    <span class="built_in">print</span>();</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">&quot;hello&quot;</span>, <span class="string">&quot; world&quot;</span>);</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">&quot;do not &quot;</span>, <span class="string">&quot;dereference &quot;</span>, n);</span><br><span class="line">    <span class="built_in">print</span>(<span class="number">1</span>, <span class="string">&#x27;+&#x27;</span>, <span class="number">1LL</span>, <span class="string">&quot;=&quot;</span>, <span class="number">2.0</span>);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</details>
+上述代码是不是看着很对？两个模板函数相互调用，可以实现递归输出全部args中的元素，但是它却无法编译，究其原因是因为编译器在编译时看不到程序中的if，所以编译器在预处理时会好奇print()函数是什么，但是编译时程序并没有给出print()的定义，所以会报编译错误。
+我们只需把程序中两个if类似的改为：
+<details>
+<summary>变参模板：包展开accept</summary>
+
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="type">void</span> <span class="title">print</span><span class="params">(Ts... ts)</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">if</span> <span class="title">constexpr</span><span class="params">(<span class="keyword">sizeof</span>...(ts) == <span class="number">0</span>)</span></span>&#123;</span><br><span class="line">        std::cout&lt;&lt;std::endl;</span><br><span class="line">        <span class="keyword">return</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">else</span>&#123;</span><br><span class="line">        <span class="built_in">f</span>(ts...);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</details>
+而constexpr if是给编译器看的if，这样程序就可以正确运行了。
+
+<h3 id="const和引用"><a href="#const和引用" class="headerlink" title="const和引用"></a>const和引用</h3><p>只读和引用结合，可以产生四种不同的变量：</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">T x;</span><br><span class="line"><span class="type">const</span> T x;</span><br><span class="line">T&amp; x;</span><br><span class="line"><span class="type">const</span> T&amp; x;</span><br></pre></td></tr></table></figure>
+<p>其中，T&amp;、T、const T都可以用来初始化const T &amp;类型的引用，但是const T类型的只读变量和const T&amp;类型的引用不能用来初始化T&amp;类型的引用（除非进行强制的类型转换），即：</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="type">int</span> x = <span class="number">1</span>;</span><br><span class="line"><span class="type">const</span> <span class="type">int</span>&amp; y = x;<span class="comment">//正确</span></span><br><span class="line"><span class="type">int</span>&amp; z = x;<span class="comment">//正确</span></span><br><span class="line"><span class="type">int</span>&amp; w = y;<span class="comment">//错误</span></span><br></pre></td></tr></table></figure>
+<p>即等式左边的读写能力一定要小于等于等式右边的读写能力。<br>这很好理解，因为如果等式左边的读写能力更强，就因为可以通过左边的引用修改右边一个较弱的引用，而这显然是有违正义的。</p>
+<h3 id="const与指针"><a href="#const与指针" class="headerlink" title="const与指针"></a>const与指针</h3><p>定义指针是可以在指针前加入const，意为：指向只读变量的指针</p>
+<ul>
+<li>不可通过该指针修改其指向的内容</li>
+<li>变量不需要真的是只读变量，而编译器会认为只读指针指向的变量是只读的<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="type">int</span> n,m;</span><br><span class="line"><span class="type">const</span> <span class="type">int</span> *ptr=&amp;n;</span><br><span class="line">*p=<span class="number">5</span>;<span class="comment">//编译错误</span></span><br><span class="line">n=<span class="number">4</span>;<span class="comment">//正确</span></span><br><span class="line">p=&amp;m;<span class="comment">//正确，指针的指向可以变化，只是不能通过指针修改内容</span></span><br></pre></td></tr></table></figure>
+相同的，c++也可以定义只读的指针变量：</li>
+<li>该指针初始化后不可修改指针内容，不允许指针指向其他对象<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="type">int</span> a=<span class="number">1</span>;</span><br><span class="line"><span class="type">int</span> *<span class="type">const</span> ptr=&amp;a;</span><br><span class="line">*a=<span class="number">2</span>;<span class="comment">//正确</span></span><br></pre></td></tr></table></figure></li>
+</ul>
+<p>总结：<strong>只读变量的指针不允许指针修改指向对象的内容，只读的指针变量不允许指针更改指向的对象</strong></p>
+<h2 id="函数的高级特性"><a href="#函数的高级特性" class="headerlink" title="函数的高级特性"></a>函数的高级特性</h2><h3 id="缺省函数"><a href="#缺省函数" class="headerlink" title="缺省函数"></a>缺省函数</h3><p>缺省函数指在c++中，我们可以给函数最右边连续的任意个参数指定缺省值，调用函数时若不在相应的位置写参数，则调用默认参数：</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="type">void</span> <span class="title">func1</span><span class="params">(<span class="type">int</span> x1,<span class="type">int</span> x2=<span class="number">1</span>,<span class="type">int</span> x3=<span class="number">2</span>)</span></span>;</span><br><span class="line"><span class="function"><span class="type">void</span> <span class="title">func2</span><span class="params">(<span class="type">int</span> x1=<span class="number">1</span>,<span class="type">int</span> x2,<span class="type">int</span> x3=<span class="number">2</span>)</span></span>;<span class="comment">//错误</span></span><br></pre></td></tr></table></figure>
+<h3 id="函数重载的复杂情况"><a href="#函数重载的复杂情况" class="headerlink" title="函数重载的复杂情况"></a>函数重载的复杂情况</h3><p>函数重载时，<strong>只有参数列表不同的两个同名函数才会被认为是重载的函数，参数列表不同包括参数个数不同和参数类型不同</strong>，如果两个同名函数只是返回值不同，则不构成重载。<br>函数重载还具有以下几个复杂情况：</p>
+<ul>
+<li>T类型参数和const T类型是相同的类型</li>
+<li>T*类型参数和T* const类型是相同的类型</li>
+<li><strong>T&amp;类型参数和const T&amp;类型是不同的类型</strong></li>
+<li><strong>T*类型参数和const T*类型是不同的类型</strong></li>
+</ul>
+<p>也就是说，同一个函数可以通过引用是否有const、指针是否有const进行重载，这可以解决题目中一些重载的问题</p>
+<h3 id="函数指针"><a href="#函数指针" class="headerlink" title="函数指针"></a>函数指针</h3><p>函数指针即可以写一个函数，使函数的参数也是表示过程的函数：</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">int</span> (*ptr)(<span class="type">int</span>,<span class="type">int</span>);<span class="comment">//开头的int是函数指针返回的类型</span></span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">max</span><span class="params">(<span class="type">int</span>,<span class="type">int</span>)</span></span>;</span><br><span class="line">(*ptr)=&amp;max;</span><br><span class="line">(*ptr)(<span class="number">3</span>,<span class="number">5</span>);</span><br></pre></td></tr></table></figure>
+<p>可以通过函数指针的解地址运算符来调用其所指向的函数</p>
+<h3 id="lambda表达式"><a href="#lambda表达式" class="headerlink" title="lambda表达式"></a>lambda表达式</h3><p>lambda表达式是c++11中引入的新特性，可以用来表示一个匿名函数，其语法为：</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">[capture](parameters)-&gt;<span class="keyword">return</span>-type&#123;body&#125;</span><br></pre></td></tr></table></figure>
+<p>其中，capture是捕获列表，parameters是参数列表，return-type是返回值类型，body是函数体。<br>即：</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="type">int</span> <span class="title">sum</span><span class="params">(<span class="type">int</span> n)</span></span>&#123;</span><br><span class="line">    <span class="keyword">return</span> [n](<span class="type">int</span> x)&#123;<span class="keyword">return</span> x+n;&#125;;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>函数体内可以访问全局变量，但是不能访问局部变量，如果想访问局部变量，可以在捕获列表中加入该变量。<br>捕获列表有几种形式：</p>
+<ul>
+<li>[a,b]：表示以值的形式捕获a和b</li>
+<li>[&#x3D;]：表示以值的形式捕获所有局部变量</li>
+<li>[&amp;a,&amp;b]：表示以引用的形式捕获a和b</li>
+<li>[&amp;]：表示以引用的形式捕获所有局部变量</li>
+</ul>
+<p>当然，我们也可以类似的定义返回lambda的lambda：</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">auto</span> add=[](<span class="type">int</span> x)&#123;</span><br><span class="line">    <span class="keyword">return</span> [=](<span class="type">int</span> y)&#123;</span><br><span class="line">        <span class="keyword">return</span> x+y;</span><br><span class="line">    &#125;;</span><br><span class="line">&#125;;</span><br><span class="line"><span class="keyword">auto</span> add5=<span class="built_in">add</span>(<span class="number">5</span>);</span><br><span class="line"><span class="built_in">add5</span>(<span class="number">3</span>);<span class="comment">//8</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="命名空间"><a href="#命名空间" class="headerlink" title="命名空间"></a>命名空间</h3><p>命名空间是c++中用来解决命名冲突的一种机制，其语法为：</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">using</span> 别名=类型;</span><br><span class="line"><span class="keyword">using</span> Func=<span class="built_in">int</span>(<span class="type">int</span>,<span class="type">int</span>);</span><br><span class="line">Func* ptr=max;</span><br></pre></td></tr></table></figure>
+
+<h2 id="面向对象编程"><a href="#面向对象编程" class="headerlink" title="面向对象编程"></a>面向对象编程</h2><h3 id="类型转换"><a href="#类型转换" class="headerlink" title="类型转换"></a>类型转换</h3><p>c++可以进行显式类型转换和隐式类型转换：</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">complex</span>&#123;</span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="type">int</span> real,imag;</span><br><span class="line">    <span class="built_in">complex</span>(<span class="type">int</span> r):<span class="built_in">real</span>(r)&#123;&#125;</span><br><span class="line">&#125;;</span><br><span class="line"><span class="function">complex <span class="title">c1</span><span class="params">(<span class="number">1</span>)</span></span>;</span><br><span class="line">complex c2=<span class="number">3</span>;<span class="comment">//隐式类型转换,调用构造函数</span></span><br><span class="line">complex c3=<span class="built_in">complex</span>(<span class="number">4</span>);<span class="comment">//显式类型转换</span></span><br></pre></td></tr></table></figure>
+<p><strong>使用explicit关键字可以阻止隐式类型转换，但是仍然可以使用显式类型转换</strong></p>
+<h3 id="静态成员"><a href="#静态成员" class="headerlink" title="静态成员"></a>静态成员</h3><p>静态成员是指在类中声明的static成员，静态成员不属于任何对象，而是属于整个类，静态成员可以通过类名访问，也可以通过对象访问，但是不能通过对象访问私有的静态成员。</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">complex</span>&#123;</span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="type">static</span> <span class="type">int</span> count;</span><br><span class="line">    <span class="built_in">complex</span>(<span class="type">int</span> r):<span class="built_in">real</span>(r)&#123;count++;&#125;</span><br><span class="line">    ~<span class="built_in">complex</span>()&#123;count--;&#125;</span><br><span class="line">&#125;;</span><br><span class="line"><span class="type">int</span> complex::count=<span class="number">0</span>;</span><br></pre></td></tr></table></figure>
+<p>其中的count就是一个静态成员。</p>
+<h2 id="oop中的只读"><a href="#oop中的只读" class="headerlink" title="oop中的只读"></a>oop中的只读</h2><p>在c++中，我们可以添加只读对象、只读成员函数与只读成员变量，只读对象的值在构造时就确定，且在整个运行期间不会发生变化，<strong>只读成员函数不会修改对象的值（即不修改任何只读成员变量）</strong>，只读成员变量在构造时就确定，且在整个运行期间不会发生变化。</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">complex</span>&#123;</span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="type">int</span> real,imag;</span><br><span class="line">    <span class="built_in">complex</span>(<span class="type">int</span> r):<span class="built_in">real</span>(r)&#123;&#125;</span><br><span class="line">    <span class="function"><span class="type">int</span> <span class="title">getreal</span><span class="params">()</span><span class="type">const</span></span>&#123;<span class="keyword">return</span> real;&#125;</span><br><span class="line">    <span class="function"><span class="type">void</span> <span class="title">setreal</span><span class="params">(<span class="type">int</span> r)</span></span>&#123;real=r;&#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+<p><strong>注意：只读对象只能使用构造函数、析构函数、只读成员函数，不可以修改成员变量，除非使用mutable关键字修饰。</strong></p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">test</span>&#123;</span><br><span class="line">    <span class="keyword">mutable</span> <span class="type">int</span> n;</span><br><span class="line">    <span class="type">bool</span> flag;</span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="type">bool</span> <span class="title">getdata</span><span class="params">()</span><span class="type">const</span></span>&#123;</span><br><span class="line">        n++;<span class="comment">//只读成员函数修改了mutable的成员变量</span></span><br><span class="line">        <span class="keyword">return</span> flag;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+
+<h1 id="运算符重载"><a href="#运算符重载" class="headerlink" title="运算符重载"></a>运算符重载</h1><h2 id="浅复制与深复制"><a href="#浅复制与深复制" class="headerlink" title="浅复制与深复制"></a>浅复制与深复制</h2><p>浅复制是指在复制对象时，只复制对象的值，而不复制对象的指针，这样会导致两个指针指向同一个对象，当其中一个指针释放对象时，另一个指针就会指向一个已经释放的对象，这就是悬空指针。</p>
+<p>深复制是指在复制对象时，不仅复制对象的值，还复制对象的指针，这样就不会出现悬空指针的情况。<br><strong>预置的运算符重载做的是浅复制，所以可以通过深复制重载使指针指向不同的地方</strong></p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">String</span>&#123;</span><br><span class="line">    <span class="type">char</span> *ptr;</span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="built_in">String</span>():<span class="built_in">ptr</span>(<span class="keyword">new</span> <span class="type">char</span>[<span class="number">1</span>])&#123;ptr[<span class="number">0</span>]=<span class="string">&#x27;\0&#x27;</span>;&#125;</span><br><span class="line">    <span class="built_in">String</span>(<span class="type">const</span> <span class="type">char</span> *s)&#123;</span><br><span class="line">        <span class="type">int</span> len=<span class="built_in">strlen</span>(s);</span><br><span class="line">        ptr=<span class="keyword">new</span> <span class="type">char</span>[len+<span class="number">1</span>];</span><br><span class="line">        <span class="built_in">strcpy</span>(ptr,s);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="function"><span class="type">const</span> <span class="type">char</span> *<span class="title">c_str</span><span class="params">()</span></span>&#123;<span class="keyword">return</span> ptr;&#125;</span><br><span class="line">    <span class="keyword">friend</span> String &amp;<span class="keyword">operator</span>=(<span class="type">const</span> <span class="type">char</span>* s)&#123;</span><br><span class="line">        <span class="keyword">if</span>(<span class="keyword">this</span>==&amp;s)</span><br><span class="line">            <span class="keyword">return</span> *<span class="keyword">this</span>;<span class="comment">//这是为了防止String s=s</span></span><br><span class="line">        <span class="keyword">delete</span>[] ptr;</span><br><span class="line">        <span class="type">int</span> len=<span class="built_in">strlen</span>(s);</span><br><span class="line">        ptr=<span class="keyword">new</span> <span class="type">char</span>[len+<span class="number">1</span>];</span><br><span class="line">        <span class="built_in">strcpy</span>(ptr,s);</span><br><span class="line">        <span class="keyword">return</span> *<span class="keyword">this</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    ~<span class="built_in">String</span>()&#123;<span class="keyword">delete</span>[] ptr;&#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+<p><strong>注意：在上述条件下，优先进行重载的等于，而不是进行隐式转换+等于</strong></p>
+<h3 id="友元的好处"><a href="#友元的好处" class="headerlink" title="友元的好处"></a>友元的好处</h3><p>在重载运算符时，很多时候我们都选择使用友元重载，而不是将重载写入成员函数，这是因为对于1+c的格式，无法使用成员函数重载，而只能使用友元重载。</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">complex</span>&#123;</span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="type">int</span> real,imag;</span><br><span class="line">    <span class="built_in">complex</span>(<span class="type">int</span> r):<span class="built_in">real</span>(r)&#123;&#125;</span><br><span class="line">    <span class="keyword">friend</span> complex <span class="keyword">operator</span>+(<span class="type">int</span> n,<span class="type">const</span> complex &amp;c)&#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="built_in">complex</span>(n+c.real);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br><span class="line"><span class="function">complex <span class="title">c</span><span class="params">(<span class="number">1</span>)</span></span>;</span><br><span class="line"><span class="number">1</span>+c;<span class="comment">//调用operator+(int n,const complex &amp;c)</span></span><br></pre></td></tr></table></figure>
+
+<h2 id="类型转换重载"><a href="#类型转换重载" class="headerlink" title="类型转换重载"></a>类型转换重载</h2><p>类型转换重载是指在c++中，我们可以重载类型转换运算符，使得我们可以自定义类型转换的过程，其语法为：</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">operator</span> <span class="title">type</span><span class="params">()</span></span>;</span><br></pre></td></tr></table></figure>
+<p>即：</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">complex</span>&#123;</span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="type">int</span> real,imag;</span><br><span class="line">    <span class="built_in">complex</span>(<span class="type">int</span> r):<span class="built_in">real</span>(r)&#123;&#125;</span><br><span class="line">    <span class="function"><span class="keyword">operator</span> <span class="title">int</span><span class="params">()</span></span>&#123;<span class="keyword">return</span> real;&#125;</span><br><span class="line">&#125;;</span><br><span class="line"><span class="function">complex <span class="title">c</span><span class="params">(<span class="number">1</span>)</span></span>;</span><br><span class="line"><span class="type">int</span> n=c;<span class="comment">//调用operator int()函数</span></span><br></pre></td></tr></table></figure>
+
+<h2 id="流插入-x2F-提取运算符重载"><a href="#流插入-x2F-提取运算符重载" class="headerlink" title="流插入&#x2F;提取运算符重载"></a>流插入&#x2F;提取运算符重载</h2><p>cout的本质是在iostream中定义的ostream类的对象<br>所以我们可以对&lt;&lt;和&gt;&gt;进行重载</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">complex</span>&#123;</span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="type">int</span> real,imag;</span><br><span class="line">    <span class="built_in">complex</span>(<span class="type">int</span> r):<span class="built_in">real</span>(r)&#123;&#125;</span><br><span class="line">    <span class="keyword">friend</span> ostream &amp;<span class="keyword">operator</span>&lt;&lt;(ostream &amp;out,<span class="type">const</span> complex &amp;c)&#123;</span><br><span class="line">        out&lt;&lt;c.real;</span><br><span class="line">        <span class="keyword">return</span> out;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br><span class="line"><span class="function">complex <span class="title">c</span><span class="params">(<span class="number">1</span>)</span></span>;</span><br><span class="line">cout&lt;&lt;c;</span><br></pre></td></tr></table></figure>
+
+<h2 id="自增减运算符重载"><a href="#自增减运算符重载" class="headerlink" title="自增减运算符重载"></a>自增减运算符重载</h2><p>c++为了区分i++和++i，前者被称为后置运算符，后者被称为前置运算符。<br>重载后置运算符的语法为：</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">type &amp;<span class="keyword">operator</span>++(type2);</span><br><span class="line">type &amp;<span class="keyword">operator</span>--(type2);</span><br></pre></td></tr></table></figure>
+<p>重载前置运算符的语法为：</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">type <span class="keyword">operator</span>++(type2,<span class="type">int</span>);</span><br><span class="line">type <span class="keyword">operator</span>--(type2,<span class="type">int</span>);</span><br></pre></td></tr></table></figure>
+<p>其中int是一个占位符，用来区分前置和后置运算符。</p>
+<h2 id="函数调用运算符重载"><a href="#函数调用运算符重载" class="headerlink" title="函数调用运算符重载"></a>函数调用运算符重载</h2><p>函数调用运算符()也可以被重载，其语法为：</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="function">type <span class="title">operator</span><span class="params">()</span><span class="params">(type2)</span></span>;</span><br></pre></td></tr></table></figure>
+<p>例如：</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">complex</span>&#123;</span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="type">int</span> real,imag;</span><br><span class="line">    <span class="built_in">complex</span>(<span class="type">int</span> r):<span class="built_in">real</span>(r)&#123;&#125;</span><br><span class="line">    <span class="function"><span class="type">int</span> <span class="title">operator</span><span class="params">()</span><span class="params">(<span class="type">int</span> n)</span></span>&#123;</span><br><span class="line">        <span class="keyword">return</span> real+n;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br><span class="line"><span class="function">complex <span class="title">c</span><span class="params">(<span class="number">1</span>)</span></span>;</span><br><span class="line"><span class="built_in">c</span>(<span class="number">2</span>);<span class="comment">//返回3</span></span><br></pre></td></tr></table></figure>
+
+<h1 id="继承和多态"><a href="#继承和多态" class="headerlink" title="继承和多态"></a>继承和多态</h1><h2 id="派生类成员的可见性"><a href="#派生类成员的可见性" class="headerlink" title="派生类成员的可见性"></a>派生类成员的可见性</h2><p>对于公开继承的派生类，派生类可以访问基类的public成员和protected成员，但是不能访问基类的private成员。</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">base</span>&#123;</span><br><span class="line">    <span class="type">int</span> privatea;</span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="type">int</span> publica；</span><br><span class="line">&#125;;</span><br><span class="line"><span class="keyword">class</span> <span class="title class_">derived</span>:<span class="keyword">public</span> base&#123;</span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="type">void</span> <span class="title">func</span><span class="params">()</span></span>&#123;</span><br><span class="line">        publica=<span class="number">1</span>;<span class="comment">//正确</span></span><br><span class="line">        privatea=<span class="number">1</span>;<span class="comment">//错误</span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+<p>对于私有继承的派生类，外部不可以通过派生类访问任何从基类继承的成员。</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">base</span>&#123;</span><br><span class="line">    <span class="type">int</span> privatea;</span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="type">int</span> publica；</span><br><span class="line">&#125;;</span><br><span class="line"><span class="keyword">class</span> <span class="title class_">derived</span>:<span class="keyword">private</span> base&#123;</span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="type">void</span> <span class="title">func</span><span class="params">()</span></span>&#123;</span><br><span class="line">        publica=<span class="number">1</span>;<span class="comment">//正确</span></span><br><span class="line">        privatea=<span class="number">1</span>;<span class="comment">//错误</span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span><span class="params">()</span></span>&#123;</span><br><span class="line">    derived d;</span><br><span class="line">    d.publica=<span class="number">1</span>;<span class="comment">//错误</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>基类的私有成员对派生类不可见有些不够灵活，所以需要一种折中的机制，即将基类的成员定义为protected<br>protected的基类成员可以被以下函数访问：</p>
+<ul>
+<li>基类的成员函数</li>
+<li>基类的友元函数</li>
+<li>派生类的成员函数 </li>
+<li>派生类的友元函数</li>
+</ul>
+<p>三种类型的继承总结一下，可以得到以下表格：<br><img src="https://tse4-mm.cn.bing.net/th/id/OIP-C.ttNMpKxP6hLtw5MUUtNpZgHaDd?w=349&h=163&c=7&r=0&o=5&dpr=1.8&pid=1.7" alt="derived"></p>
+<h2 id="派生类到基类"><a href="#派生类到基类" class="headerlink" title="派生类到基类"></a>派生类到基类</h2><p>首先指出：<strong>在派生类的虚函数后加override关键字表示派生类的虚函数显式覆盖了基类的虚函数，和explicit起相同效果，显式的一定是更好的</strong><br><strong>final则是禁止覆盖的关键字</strong></p>
+<h3 id="派生类到基类的隐式转换"><a href="#派生类到基类的隐式转换" class="headerlink" title="派生类到基类的隐式转换"></a>派生类到基类的隐式转换</h3><p><strong>一个公开继承的派生类对象可以隐式转换到基类</strong></p>
+<ul>
+<li>该对象不包括派生类定义的成员</li>
+<li>从派生类构造基类时会调用基类的复制构造函数</li>
+<li>将派生类赋值到基类时会调用基类的复制赋值重载</li>
+</ul>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">base</span>&#123;&#125;；</span><br><span class="line"><span class="keyword">class</span> <span class="title class_">derived</span>:<span class="keyword">public</span> base&#123;&#125;;</span><br><span class="line"><span class="function"><span class="type">void</span> <span class="title">func</span><span class="params">(base b)</span></span>;</span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span><span class="params">()</span></span>&#123;</span><br><span class="line">    derived d;</span><br><span class="line">    <span class="built_in">func</span>(d);<span class="comment">//从派生类构造基类</span></span><br><span class="line">    base b=d;<span class="comment">//派生类赋值到基类</span></span><br><span class="line">    b=d;<span class="comment">//基类形参，派生类实参</span></span><br><span class="line">    <span class="built_in">f</span>(d);<span class="comment">//</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="基类的引用到派生类"><a href="#基类的引用到派生类" class="headerlink" title="基类的引用到派生类"></a>基类的引用到派生类</h3><p><strong>若派生类公开继承自基类，则基类的引用可以绑定到派生类对象</strong><br><strong>但是即使绑定到了派生类，也只能访问基类的成员，不能访问派生类的成员</strong></p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">base</span>&#123;</span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="type">int</span> basemem;</span><br><span class="line">&#125;;</span><br><span class="line"><span class="keyword">class</span> <span class="title class_">derived</span>:<span class="keyword">public</span> base&#123;</span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="type">int</span> derivedmem;</span><br><span class="line">&#125;;</span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span><span class="params">()</span></span>&#123;</span><br><span class="line">    derived d;</span><br><span class="line">    base &amp;b&#123;d&#125;;</span><br><span class="line">    b.basemem=<span class="number">1</span>;<span class="comment">//正确</span></span><br><span class="line">    b.derivedmem=<span class="number">1</span>;<span class="comment">//错误</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p><strong>当通过基类引用调用基类和派生类中重名的虚函数时，引用基类对象则调用基类虚函数，引用派生类对象则调用派生类虚函数</strong></p>
+<h3 id="基类的指针到派生类"><a href="#基类的指针到派生类" class="headerlink" title="基类的指针到派生类"></a>基类的指针到派生类</h3><p><strong>若派生类公开继承自基类，派生类对象的指针可以直接赋值给基类的指针</strong><br><strong>即使基类指针指向的是派生类对象，也不能通过基类指针访问基类没有但是派生类有的成员</strong></p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">base</span>&#123;</span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="type">int</span> basemem;</span><br><span class="line">&#125;;</span><br><span class="line"><span class="keyword">class</span> <span class="title class_">derived</span>:<span class="keyword">public</span> base&#123;</span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="type">int</span> derivedmem;</span><br><span class="line">&#125;;</span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span><span class="params">()</span></span>&#123;</span><br><span class="line">    derived d;</span><br><span class="line">    base *b=&amp;d;</span><br><span class="line">    b-&gt;basemem=<span class="number">1</span>;<span class="comment">//正确</span></span><br><span class="line">    b-&gt;derivedmem=<span class="number">1</span>;<span class="comment">//错误</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>通过强制类型转换，也可以将基类的指针转换为派生类的指针：</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">derived *d=(derived*)b;</span><br></pre></td></tr></table></figure>
+<p><strong>虚函数的访问权限则是根据指针类型来判断的</strong></p>
+<h2 id="运行时类型识别"><a href="#运行时类型识别" class="headerlink" title="运行时类型识别"></a>运行时类型识别</h2><p>引入头文件</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;typeinfo&gt;</span></span></span><br></pre></td></tr></table></figure>
+<p>对于相同表达式的类型或相同类型，typeid运算符可以得到相同的值：</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;typeinfo&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"><span class="keyword">class</span> <span class="title class_">base</span>&#123;</span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="keyword">virtual</span> ~<span class="built_in">b</span>()&#123;&#125;</span><br><span class="line">&#125;;</span><br><span class="line"><span class="keyword">class</span> <span class="title class_">d1</span>:<span class="keyword">public</span> b&#123;&#125;;</span><br><span class="line"><span class="keyword">class</span> <span class="title class_">d2</span>:<span class="keyword">public</span> b&#123;&#125;;</span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span><span class="params">()</span></span>&#123;</span><br><span class="line">    B* b=<span class="keyword">new</span> d1;</span><br><span class="line">    <span class="keyword">if</span>(<span class="built_in">typeid</span>(*b)==<span class="built_in">typeid</span>(d1))</span><br><span class="line">        cout&lt;&lt;<span class="string">&quot;b has type d1&quot;</span>;</span><br><span class="line">    <span class="keyword">if</span>(<span class="built_in">typeid</span>(*b)==<span class="built_in">typeid</span>(d2))</span><br><span class="line">        cout&lt;&lt;<span class="string">&quot;b has type d2&quot;</span>;</span><br><span class="line">    <span class="keyword">delete</span> b;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="四种类型转换"><a href="#四种类型转换" class="headerlink" title="四种类型转换"></a>四种类型转换</h2><p>危险的const_cast和reinterpret_cast这里就不过多介绍了</p>
+<h3 id="static-cast"><a href="#static-cast" class="headerlink" title="static_cast"></a>static_cast</h3><p>静态的类型转换，基本上安全</p>
+<ul>
+<li>算术类型转换</li>
+<li>自定义类型转换</li>
+<li><strong>派生类指针和基类指针间的相互转换</strong></li>
+</ul>
+<p>但是static_cast在向下转型：基类指针到派生类指针时会有风险，在长数到段数转型时也有溢出的风险</p>
+<h3 id="dynamic-cast"><a href="#dynamic-cast" class="headerlink" title="dynamic_cast"></a>dynamic_cast</h3><p>动态类型转换，在保证多态类型向下转型绝对安全</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">Base* ptrOK=<span class="keyword">new</span> derived&#123;&#125;;</span><br><span class="line">Base* ptrBad=<span class="keyword">new</span> base&#123;&#125;;</span><br><span class="line"><span class="built_in">dynamic_cast</span>&lt;Derived*&gt;(ptrOK);<span class="comment">//正确</span></span><br><span class="line"><span class="built_in">dynamic_cast</span>&lt;Derived*&gt;(ptrBad);<span class="comment">//正确，但得到空指针</span></span><br></pre></td></tr></table></figure>
+<p>在if条件判断语句中可以声明变量，如果变量声明为假，即变赋值右侧转换为bool值为false，则不进行if中的语句。</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">if</span>(<span class="keyword">auto</span> ptrDog=<span class="built_in">dynamic_cast</span>&lt;<span class="type">const</span> Dog*&gt;(pAnimal))</span><br><span class="line">    ptrDog-&gt;<span class="built_in">bark</span>();</span><br></pre></td></tr></table></figure>
+<p>如上式，我们可以利用这个特性做到运行时类型识别，但是它的性能要低于typeid</p>
+<h1 id="模板"><a href="#模板" class="headerlink" title="模板"></a>模板</h1><h2 id="非类型模板参数"><a href="#非类型模板参数" class="headerlink" title="非类型模板参数"></a>非类型模板参数</h2><p>非类型模板参数是指模板参数不是类型，而是一个值，其语法为：</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">template</span>&lt;<span class="type">int</span> N&gt;</span><br><span class="line"><span class="keyword">class</span> <span class="title class_">array</span>&#123;</span><br><span class="line">    <span class="type">int</span> data[N];</span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="type">int</span> <span class="title">size</span><span class="params">()</span></span>&#123;<span class="keyword">return</span> N;&#125;</span><br><span class="line">&#125;;</span><br><span class="line">array&lt;10&gt; a;</span><br></pre></td></tr></table></figure>
+<p>在编译器角度看，array&lt;10&gt;和array&lt;20&gt;是两个不同的类<br>使用非类型模板参数可以提高程序的执行效率</p>
+<h2 id="模板的特化与实例化"><a href="#模板的特化与实例化" class="headerlink" title="模板的特化与实例化"></a>模板的特化与实例化</h2><p>模板的特化是指对于某些特殊的类型，我们可以对模板进行特殊的定义，其语法为：</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">template</span>&lt;<span class="keyword">typename</span> T&gt;</span><br><span class="line"><span class="keyword">class</span> <span class="title class_">complex</span>&#123;</span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    T real,imag;</span><br><span class="line">    <span class="built_in">complex</span>(T r):<span class="built_in">real</span>(r)&#123;&#125;</span><br><span class="line">&#125;;</span><br><span class="line"><span class="keyword">template</span>&lt;&gt;</span><br><span class="line"><span class="keyword">class</span> <span class="title class_">complex</span>&lt;<span class="type">double</span>&gt;&#123;</span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="type">double</span> real,imag;</span><br><span class="line">    <span class="built_in">complex</span>(<span class="type">double</span> r):<span class="built_in">real</span>(r)&#123;&#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+<p>在上述代码中，我们对于double类型的模板进行了特化，即对于double类型的模板，我们可以使用更加高效的实现。</p>
+<p>在类模板派生时，需要对基类实例化，即：</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">template</span>&lt;<span class="keyword">typename</span> T&gt;</span><br><span class="line"><span class="keyword">class</span> <span class="title class_">base</span>&#123;&#125;;</span><br><span class="line"><span class="keyword">template</span>&lt;<span class="keyword">typename</span> T&gt;</span><br><span class="line"><span class="keyword">class</span> <span class="title class_">derived</span>:<span class="keyword">public</span> base&lt;T&gt;&#123;&#125;;</span><br></pre></td></tr></table></figure>
+
+<h2 id="标准模板库"><a href="#标准模板库" class="headerlink" title="标准模板库"></a>标准模板库</h2><h3 id="容器"><a href="#容器" class="headerlink" title="容器"></a>容器</h3><h4 id="顺序容器"><a href="#顺序容器" class="headerlink" title="顺序容器"></a>顺序容器</h4><p>顺序容器是指容器中的元素是按照一定的顺序排列的，包括vector、list、deque、array、forward_list</p>
+<ul>
+<li>vector：动态数组，支持随机访问，支持尾部插入和删除，不支持中间插入和删除</li>
+<li>list：双向链表，支持双向访问，支持任意位置插入和删除，<strong>不支持随机存取</strong></li>
+<li>deque：双端队列，支持随机访问，支持头尾插入和删除</li>
+</ul>
+<h4 id="关联容器"><a href="#关联容器" class="headerlink" title="关联容器"></a>关联容器</h4><p>关联容器是指容器中的元素是按照一定的规则排列的，包括set、map、multiset、multimap</p>
+<ul>
+<li>set：集合，元素唯一，按照一定的规则排列</li>
+<li>map：映射，元素唯一，按照一定的规则排列，每个元素包含一个键值对</li>
+<li>multiset：集合，元素不唯一，按照一定的规则排列</li>
+<li>unordered_set：集合，元素唯一，按照一定的规则排列，使用哈希表实现<br>unordered_set是一种无序关联容器，插入和检索只需要常数时间，但是不支持有序性操作，如lower_bound、upper_bound等</li>
+</ul>
+<h4 id="容器适配器"><a href="#容器适配器" class="headerlink" title="容器适配器"></a>容器适配器</h4><p>容器适配器是指容器的接口和实现分离，包括stack、queue、priority_queue</p>
+<p>上述容器会有一些共有的成员函数：</p>
+<ul>
+<li>begin()：返回指向容器第一个元素的迭代器</li>
+<li>end()：返回指向容器最后一个元素的下一个位置的迭代器</li>
+<li>rbegin()：返回指向容器最后一个元素的迭代器</li>
+<li>rend()：返回指向容器第一个元素的前一个位置的迭代器</li>
+<li>erase()：删除指定位置的元素</li>
+<li>clear()：删除容器中的所有元素</li>
+<li>empty()：判断容器是否为空</li>
+<li>size()：返回容器中元素的个数</li>
+<li>swap()：交换两个容器的元素</li>
+</ul>
+<p>顺序容器还会有一些常用的成员函数：</p>
+<ul>
+<li>push_back()：在容器尾部插入元素</li>
+<li>pop_back()：删除容器尾部的元素</li>
+<li>front()：返回容器头部的元素的引用</li>
+<li>back()：返回容器尾部的元素的引用</li>
+</ul>
+<h3 id="迭代器"><a href="#迭代器" class="headerlink" title="迭代器"></a>迭代器</h3><p>迭代器是一种类似指针的对象，可以用来遍历容器中的元素，迭代器的类型取决于容器的类型，迭代器的类型可以分为以下几种：</p>
+<ul>
+<li>输入迭代器：只读，只能单步向前移动（*p可以获取数据）</li>
+<li>输出迭代器：只写，只能单步向前移动（*p可以修改数据）</li>
+<li>前向迭代器：可读写，只能单步向前移动（可以p++）</li>
+<li>双向迭代器：可读写，可以双向移动（可以p–）</li>
+<li>随机访问迭代器：可读写，可以双向移动，可以随机访问（可以p+&#x3D;i，比较大小，获取下标p[i]）</li>
+<li>连续迭代器：可读写，可以双向移动，可以随机访问，可以进行指针运算（数据连续存储，可以使用p-q来获得地址）</li>
+</ul>
+<h3 id="std-copy"><a href="#std-copy" class="headerlink" title="std::copy"></a>std::copy</h3><p>std::copy是一个泛型算法，可以将一个容器的元素复制到另一个容器中，其语法为：</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">copy</span>(begin,end,begin2);</span><br></pre></td></tr></table></figure>
+<p>其中begin和end是第一个容器的起始位置和结束位置，begin2是第二个容器的起始位置，第二个容器的大小必须大于等于第一个容器的大小。</p>
+<p>back_inserter()是一个函数模板，可以将元素插入到容器的尾部，其语法为：</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">copy</span>(begin,end,<span class="built_in">back_inserter</span>(container));</span><br></pre></td></tr></table></figure>
+<h4 id="std-copy-if"><a href="#std-copy-if" class="headerlink" title="std::copy_if"></a>std::copy_if</h4><p>std::copy_if比std::copy多了一个参数，最后一个参数是可调用对象，如果作用在当前参数上返回true，则将当前参数复制到第二个容器中，其语法为：</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">copy_if</span>(begin,end,begin2,func);</span><br></pre></td></tr></table></figure>
+
+<h3 id="函数对象"><a href="#函数对象" class="headerlink" title="函数对象"></a>函数对象</h3><p>函数对象有独立于调用的初始化过程，使用lambda表达式可以方便的定义函数对象，其语法为：</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">template</span>&lt;<span class="keyword">typename</span> T&gt;</span></span><br><span class="line"><span class="function"><span class="type">void</span> <span class="title">someAsyncTask</span><span class="params">(T callback)</span></span>&#123;</span><br><span class="line">    <span class="keyword">return</span>;</span><br><span class="line">    <span class="type">int</span> result=<span class="comment">/*answer*/</span>;</span><br><span class="line">    <span class="built_in">callback</span>(result);</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span><span class="params">()</span></span>&#123;</span><br><span class="line">    <span class="built_in">someAsyncTask</span>([&amp;](<span class="type">int</span> result)&#123;</span><br><span class="line">        cout&lt;&lt;<span class="string">&quot;The answer is &quot;</span>&lt;&lt;result&lt;&lt;endl;</span><br><span class="line">    &#125;);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="视图"><a href="#视图" class="headerlink" title="视图"></a>视图</h3><p>视图是一种容器适配器，可以将容器的部分元素作为容器使用，其语法为：</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;vector&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;algorithm&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;ranges&gt;</span></span></span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span><span class="params">()</span></span>&#123;</span><br><span class="line">    std::vector&lt;<span class="type">int</span>&gt; v&#123;<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">4</span>,<span class="number">5</span>,<span class="number">6</span>,<span class="number">7</span>,<span class="number">8</span>,<span class="number">9</span>,<span class="number">10</span>&#125;;</span><br><span class="line">    std::ranges::reverse_view v2&#123;v&#125;;</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">auto</span> i:v2)</span><br><span class="line">        std::cout&lt;&lt;i&lt;&lt;<span class="string">&#x27; &#x27;</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>上述reverse_view是反转视图，试图提供了一种不修改原容器的方法来访问容器的元素，这种方法可以提高程序的效率。</p>
+<p>当然，还有其他视图：</p>
+<ul>
+<li>filter_view：筛选视图<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">std::vector&lt;<span class="type">int</span>&gt; v&#123;<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">4</span>,<span class="number">5</span>,<span class="number">6</span>,<span class="number">7</span>,<span class="number">8</span>,<span class="number">9</span>,<span class="number">10</span>&#125;;</span><br><span class="line">std::ranges::filter_view v2&#123;v,[](<span class="type">int</span> i)&#123;<span class="keyword">return</span> i%<span class="number">2</span>==<span class="number">0</span>;&#125;&#125;;</span><br><span class="line"><span class="keyword">for</span>(<span class="keyword">auto</span> i:v2)</span><br><span class="line">    std::cout&lt;&lt;i&lt;&lt;<span class="string">&#x27; &#x27;</span>;</span><br></pre></td></tr></table></figure></li>
+<li>transform_view：转换视图<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">std::vector&lt;<span class="type">int</span>&gt; v&#123;<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">4</span>,<span class="number">5</span>,<span class="number">6</span>,<span class="number">7</span>,<span class="number">8</span>,<span class="number">9</span>,<span class="number">10</span>&#125;;</span><br><span class="line">std::ranges::transform_view v2&#123;v,[](<span class="type">int</span> i)&#123;<span class="keyword">return</span> i*<span class="number">2</span>;&#125;&#125;;</span><br><span class="line"><span class="keyword">for</span>(<span class="keyword">auto</span> i:v2)</span><br><span class="line">    std::cout&lt;&lt;i&lt;&lt;<span class="string">&#x27; &#x27;</span>;</span><br></pre></td></tr></table></figure></li>
+<li>take_view：早退视图<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">std::vector&lt;<span class="type">int</span>&gt; v&#123;<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">4</span>,<span class="number">5</span>,<span class="number">6</span>,<span class="number">7</span>,<span class="number">8</span>,<span class="number">9</span>,<span class="number">10</span>&#125;;</span><br><span class="line">std::ranges::take_view v2&#123;v,<span class="number">5</span>&#125;;</span><br><span class="line"><span class="keyword">for</span>(<span class="keyword">auto</span> i:v2)</span><br><span class="line">    std::cout&lt;&lt;i&lt;&lt;<span class="string">&#x27; &#x27;</span>;</span><br></pre></td></tr></table></figure></li>
+</ul>
+<h1 id="习题精选"><a href="#习题精选" class="headerlink" title="习题精选"></a>习题精选</h1>
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://example.com/2023/05/09/%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1%E7%BC%96%E7%A8%8B%EF%BC%9A%E4%B8%80%E4%BA%9B%E8%AF%B4%E6%98%8E/" data-id="clhf58i3h0000wgash51j23qf" data-title="" class="article-share-link">Share</a>
+      
+      
+      
+    </footer>
+  </div>
+  
+    
+  
+</article>
+
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+
+  
+    
+
+  
+    
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2023/05/">May 2023</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recent Posts</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2023/05/09/%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1%E7%BC%96%E7%A8%8B%EF%BC%9A%E4%B8%80%E4%BA%9B%E8%AF%B4%E6%98%8E/">(no title)</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      
+      &copy; 2023 John Doe<br>
+      Powered by <a href="https://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+
+<script src="/js/jquery-3.4.1.min.js"></script>
+
+
+
+  
+<script src="/fancybox/jquery.fancybox.min.js"></script>
+
+
+
+
+<script src="/js/script.js"></script>
+
+
+
+
+
+  </div>
+</body>
+</html>
