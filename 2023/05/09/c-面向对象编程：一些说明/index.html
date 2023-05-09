@@ -144,7 +144,6 @@ replay-btn" aria-hidden="true"></i></a>
 </li>
 </ul>
 </li>
-<li><a href="#%E4%B9%A0%E9%A2%98%E7%B2%BE%E9%80%89">习题精选</a></li>
 </ul>
 <blockquote>
 <p>写在前面<br>已经很久没有写代码了，包括自己高中的时候学的一些小伎俩基本也忘干净了，现在对于计算机课来说还是很紧张的。所以打算再写一篇文档，以复刻ai基础考前抱佛脚熟读讲义之便。<br>唉</p>
@@ -361,7 +360,7 @@ replay-btn" aria-hidden="true"></i></a>
 <li>transform_view：转换视图<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">std::vector&lt;<span class="type">int</span>&gt; v&#123;<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">4</span>,<span class="number">5</span>,<span class="number">6</span>,<span class="number">7</span>,<span class="number">8</span>,<span class="number">9</span>,<span class="number">10</span>&#125;;</span><br><span class="line">std::ranges::transform_view v2&#123;v,[](<span class="type">int</span> i)&#123;<span class="keyword">return</span> i*<span class="number">2</span>;&#125;&#125;;</span><br><span class="line"><span class="keyword">for</span>(<span class="keyword">auto</span> i:v2)</span><br><span class="line">    std::cout&lt;&lt;i&lt;&lt;<span class="string">&#x27; &#x27;</span>;</span><br></pre></td></tr></table></figure></li>
 <li>take_view：早退视图<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">std::vector&lt;<span class="type">int</span>&gt; v&#123;<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">4</span>,<span class="number">5</span>,<span class="number">6</span>,<span class="number">7</span>,<span class="number">8</span>,<span class="number">9</span>,<span class="number">10</span>&#125;;</span><br><span class="line">std::ranges::take_view v2&#123;v,<span class="number">5</span>&#125;;</span><br><span class="line"><span class="keyword">for</span>(<span class="keyword">auto</span> i:v2)</span><br><span class="line">    std::cout&lt;&lt;i&lt;&lt;<span class="string">&#x27; &#x27;</span>;</span><br></pre></td></tr></table></figure></li>
 </ul>
-<h1 id="习题精选"><a href="#习题精选" class="headerlink" title="习题精选"></a>习题精选</h1>
+
   </div>
   
 </div>
