@@ -1,0 +1,200 @@
+
+
+  <!DOCTYPE html>
+  <html lang="en">
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="renderer" content="webkit">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+  <meta name="description" content=一名在元培学院通用人工智能方向上学的本科生，敬上！ >
+  <meta name="keywords" content=hexo,theme,notes >
+
+  <head>
+    <title>
+      RNN复习总结 [ UsanoCoCr&#39;s Blog ]
+    </title>
+  <meta name="generator" content="Hexo 6.3.0"></head>
+
+  <body>
+
+    <link rel="stylesheet" href="/css/header.css">
+<div class="header">
+  <div class="logo">
+    <span class="pull-left">
+      <a id="site-name" href="/">
+        UsanoCoCr&#39;s blog
+      </a>
+    </span>
+  </div>
+  <ul class="nav-list">
+    
+      <li>
+        <a href="/">
+          首页
+        </a>
+      </li>
+      
+  </ul>
+</div>
+
+      <!--<link rel="stylesheet" href="/css/top-header.css">
+<div id="top-bar" class="fixed">
+
+  <a class="goto-top" href="#"></a>
+  <ul class="bar-list bar-list-1">
+    
+      <li>
+        <p>
+          <a href="/">
+            <text class="bar-text bar-p1">
+              首页
+            </text>
+            <text class="bar-text bar-p2"></text>
+          </a>
+          <text class="bar-p3">/</text>
+        </p>
+      </li>
+      
+  </ul>
+</div>-->
+
+        <div id="content-outer">
+          <div class="content-inner">
+            <link rel="stylesheet" href="/css/post.css">
+<div class="posts">
+  <a href="/index.html"><i class="fa fa-home
+replay-btn" aria-hidden="true"></i></a>
+  <div class="post-title">
+    <p>
+      RNN复习总结
+    </p>
+    <hr>
+  </div>
+  <div class="post-content">
+    <h1 id="循环神经网络"><a href="#循环神经网络" class="headerlink" title="循环神经网络"></a>循环神经网络</h1><h2 id="目录"><a href="#目录" class="headerlink" title="目录"></a>目录</h2><ul>
+<li><a href="#%E5%BE%AA%E7%8E%AF%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C">循环神经网络</a><ul>
+<li><a href="#%E7%9B%AE%E5%BD%95">目录</a></li>
+<li><a href="#1%E8%AF%8D%E5%B5%8C%E5%85%A5">1.词嵌入</a><ul>
+<li><a href="#1%E8%AF%8D%E7%9A%84%E8%A1%A8%E7%A4%BA">1.词的表示</a></li>
+<li><a href="#2%E8%AF%8D%E5%B5%8C%E5%85%A5%E7%9A%84%E5%AD%A6%E4%B9%A0-word2vec">2.词嵌入的学习 Word2Vec</a><ul>
+<li><a href="#%E5%99%AA%E5%A3%B0%E5%AF%B9%E6%AF%94%E4%BC%B0%E8%AE%A1-nce">噪声对比估计 NCE</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a href="#2%E6%9C%B4%E7%B4%A0%E5%BE%AA%E7%8E%AF%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C%E4%B8%8E%E9%97%A8%E6%8E%A7%E5%8D%95%E5%85%83">2.朴素循环神经网络与门控单元</a><ul>
+<li><a href="#1%E6%9C%B4%E7%B4%A0%E5%BE%AA%E7%8E%AF%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C">1.朴素循环神经网络</a></li>
+<li><a href="#2%E9%95%BF%E7%9F%AD%E6%9C%9F%E8%AE%B0%E5%BF%86%E7%BD%91%E7%BB%9C-lstm">2.长短期记忆网络 LSTM</a></li>
+<li><a href="#3%E5%BA%8F%E5%88%97%E5%88%B0%E5%BA%8F%E5%88%97%E6%A8%A1%E5%9E%8B-seq2seq">3.序列到序列模型 Seq2Seq</a><ul>
+<li><a href="#%E6%9D%9F%E6%90%9C%E7%B4%A2-beam-search">束搜索 Beam Search</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a href="#3%E6%B3%A8%E6%84%8F%E5%8A%9B%E6%9C%BA%E5%88%B6">3.注意力机制</a><ul>
+<li><a href="#1%E8%87%AA%E6%B3%A8%E6%84%8F%E5%8A%9B%E6%9C%BA%E5%88%B6">1.自注意力机制</a></li>
+<li><a href="#2%E5%A4%9A%E5%A4%B4%E6%B3%A8%E6%84%8F%E5%8A%9B%E6%9C%BA%E5%88%B6">2.多头注意力机制</a></li>
+</ul>
+</li>
+<li><a href="#4transformer">4.Transformer</a><ul>
+<li><a href="#%E6%8E%A9%E7%A0%81">掩码</a></li>
+<li><a href="#%E7%BC%96%E7%A0%81%E5%99%A8-%E8%A7%A3%E7%A0%81%E5%99%A8%E6%B3%A8%E6%84%8F%E5%8A%9B%E6%9C%BA%E5%88%B6">编码器-解码器注意力机制</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h2 id="1-词嵌入"><a href="#1-词嵌入" class="headerlink" title="1.词嵌入"></a>1.词嵌入</h2><h3 id="1-词的表示"><a href="#1-词的表示" class="headerlink" title="1.词的表示"></a>1.词的表示</h3><p>循环神经网络逐个接受单词，在循环神经网络中我们有几种方式来表示每个单词：</p>
+<ul>
+<li>one-hot向量：缺点：大词汇量将导致维数灾难；所有单词都是独立的，没有体现单词之间的关系。</li>
+<li>词袋模型：使用单词频率表示句子，缺点：大词汇量会导致维数灾难；丢失了单词的位置信息。</li>
+<li>词嵌入：用一组浮点数向量来表示一个单词，相似的词会被分在一起</li>
+</ul>
+<h3 id="2-词嵌入的学习-Word2Vec"><a href="#2-词嵌入的学习-Word2Vec" class="headerlink" title="2.词嵌入的学习 Word2Vec"></a>2.词嵌入的学习 Word2Vec</h3><p>现有的算法通过阅读大量文本文档来学习词嵌入表，这是一种自监督的学习方法。</p>
+<ul>
+<li>连续词袋模型CBOW：通过上下文预测中间的单词</li>
+<li>Skip-gram(SG)：通过中间的单词预测上下文</li>
+</ul>
+<h4 id="噪声对比估计-NCE"><a href="#噪声对比估计-NCE" class="headerlink" title="噪声对比估计 NCE"></a>噪声对比估计 NCE</h4><ul>
+<li>SG在训练过程中，每个单词都被分为正样本和负样本，其中正样本是真正的单词，负样本是人工构造的，它们并未在实际文本中作为上下文词对出现。负样本的选择通常是基于词频的，但会进行一些调整。这些负样本被用来训练模型以识别不太可能出现的词对。</li>
+<li>Skip-gram有多个目标输出，因此使用sigmoid而不是softmax，我们独立的对每个单词进行分类。</li>
+<li>大词汇表会导致巨大的计算成本，我们可以使用负采样来加速损失函数的计算，从词汇表中随机采样N个负样本，这种方法被称为噪声对比估计（NCE）。</li>
+</ul>
+<h2 id="2-朴素循环神经网络与门控单元"><a href="#2-朴素循环神经网络与门控单元" class="headerlink" title="2.朴素循环神经网络与门控单元"></a>2.朴素循环神经网络与门控单元</h2><h3 id="1-朴素循环神经网络"><a href="#1-朴素循环神经网络" class="headerlink" title="1.朴素循环神经网络"></a>1.朴素循环神经网络</h3><p>循环神经网络与前馈神经网络之间唯一的区别在于，它会将前一个时间步的信息传递给下一个时间步：<br><img src="https://pic2.zhimg.com/80/v2-b333b24f19a11eed32500bd06dcaae65_1440w.webp" alt="rnn"><br>假设第t个时间步的输出为$o_t$，激活函数为$g(x)$，每一个时间步的输入为$x_t$，每个时间步的矩阵为$W_t$，输入到隐藏层和隐藏到输出层的矩阵分别为$U、V$，隐藏层的输出为$s_t$，则有：<br>$$<br>s_t &#x3D; f(Ux_t + Ws_{t-1}) \<br>o_t &#x3D; g(Vs_t)<br>    &#x3D; g(Vf(Ux_t + Ws_{t-1}))$$<br>这样就实现了前一个时间步保留信息的传递。</p>
+<p><strong>朴素神经网络的一个局限性是：长期依赖问题</strong>。朴素RNN很难维持较为长期的信息，可能存在梯度消失的问题。</p>
+<h3 id="2-长短期记忆网络-LSTM"><a href="#2-长短期记忆网络-LSTM" class="headerlink" title="2.长短期记忆网络 LSTM"></a>2.长短期记忆网络 LSTM</h3><p>LSTM通过门控单元来控制信息的流动，从而解决了长期依赖问题。LSTM的结构如下：<br><img src="https://pic4.zhimg.com/80/v2-2795bc16b012322f7767cd4d940ba2e3_1440w.webp" alt="lstm"></p>
+<p>朴素RNN在时间维度上只传递一个隐藏状态，而LSTM在时间维度上传递两个隐藏状态，一个是长期状态$c_t$，一个是短期状态$h_t$：</p>
+<ul>
+<li><strong>隐藏状态向量</strong>：这是LSTM的输出，通常记为h。对于每一个时间步，隐藏状态向量包含了过去信息的某种程度的总结，同时也用于预测当前时间步的输出。这个向量也会被传递到下一个时间步，与新的输入一起决定下一步的输出和新的隐藏状态。</li>
+<li><strong>细胞状态向量</strong>：这是LSTM的“记忆”部分，通常记为c。细胞状态是一条在时间维度上“流动”的信息通道，它能够跨越很长的时间序列进行信息传递。通过门控机制（包括遗忘门、输入门和输出门），LSTM能够学会如何添加新的信息到细胞状态中，或者从细胞状态中删除不再需要的信息。这种设计使得LSTM能够有效地捕捉和利用长期依赖关系。</li>
+</ul>
+<p>LSTM是通过三个门控单元完成细胞状态的存储的：</p>
+<ul>
+<li><strong>遗忘门</strong>：决定了细胞状态中哪些信息需要被删除。它通过一个sigmoid层计算h和x来输出，并且传递给c。</li>
+<li><strong>输入门</strong>：决定了细胞状态中哪些新的信息需要被添加。它通过一个sigmoid层和一个tanh层计算h和x来输出，并且叉乘两个输出结果，最后将结果添加到细胞状态中。</li>
+<li><strong>输出门</strong>：决定了细胞状态中哪些信息需要被输出。它通过一个sigmoid层返回新的隐藏状态h，再使用tanh层将结果添加到细胞状态中。</li>
+</ul>
+<h3 id="3-序列到序列模型-Seq2Seq"><a href="#3-序列到序列模型-Seq2Seq" class="headerlink" title="3.序列到序列模型 Seq2Seq"></a>3.序列到序列模型 Seq2Seq</h3><p>序列到序列模型是一种常见的循环神经网络结构，它由两个循环神经网络组成，一个编码器（Encoder）和一个解码器（Decoder）。编码器将输入序列转换为一个向量，解码器将这个向量转换为一个新的序列。</p>
+<ul>
+<li><strong>编码器</strong>：编码器是一个循环神经网络（RNN）或其变体（如LSTM或GRU），用于处理输入序列。输入序列可以是一句话、一段文字或者时间序列等。编码器会将这个输入序列转化为一个固定大小的上下文向量（也称为编码向量）。上下文向量试图捕捉输入序列的主要信息。</li>
+<li><strong>解码器</strong>：解码器是另一个RNN，它接收编码器产生的上下文向量，并以此为基础生成输出序列。输出序列可以是翻译后的句子、图像描述、下一个时间步的预测等。</li>
+</ul>
+<h4 id="束搜索-Beam-Search"><a href="#束搜索-Beam-Search" class="headerlink" title="束搜索 Beam Search"></a>束搜索 Beam Search</h4><p>在Seq2Seq模型中，输出序列的生成可以看作是一个搜索问题，我们需要在所有可能的输出序列中寻找最好的序列。贪心搜索和束搜索都是为了解决这个问题的方法，但是贪心所做的第一选择不一定是最优的，所以我们使用束搜索。<br><strong>束搜索的Beam越大，结果越好，越慢，越耗算力；Beam越小，结果越差，越快，越省算力。</strong></p>
+<h2 id="3-注意力机制"><a href="#3-注意力机制" class="headerlink" title="3.注意力机制"></a>3.注意力机制</h2><p>早期的序列模型有一个共同的问题：长度依赖问题。人在阅读长篇内容时，通常会将注意力集中在一些词语上以便理解。</p>
+<h3 id="1-自注意力机制"><a href="#1-自注意力机制" class="headerlink" title="1.自注意力机制"></a>1.自注意力机制</h3><p>注意力提示非为两类：</p>
+<ul>
+<li>非自主性提示：键（Key）、值（Value）</li>
+<li>自主性提示：查询（Query）</li>
+</ul>
+<p>注意力汇聚则是通过计算，得到注意力汇聚在哪些单词上的过程：<br><img src="https://th.bing.com/th/id/OIP.v4Vv1FCNlKrOyoM1lQIi-AHaEo?w=264&h=180&c=7&r=0&o=5&dpr=1.8&pid=1.7" alt="attention"></p>
+<p>我们可以使用K、V、Q三个矩阵来获得注意力，使用$d_k$表示键向量的维度：<br>$$<br>Attention(Q,K,V) &#x3D; softmax(\frac{QK^T}{\sqrt{d_k}})V<br>$$<br>其中，缩放（除以维度的平方根）的原因是防止点积过大；softmax归一化的原因是使所有注意力权重的和为1。</p>
+<h3 id="2-多头注意力机制"><a href="#2-多头注意力机制" class="headerlink" title="2.多头注意力机制"></a>2.多头注意力机制</h3><p>多头注意力包括了h个self-attention组合，映射到h个空间，关注不同的特征维度：<br><img src="https://img-blog.csdnimg.cn/20210328161831710.jpg?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L2JlaWxpemhhbmc=,size_16,color_FFFFFF,t_70#pic_center" alt="attention"></p>
+<h2 id="4-Transformer"><a href="#4-Transformer" class="headerlink" title="4.Transformer"></a>4.Transformer</h2><p>Transformer模型与传统的Seq2Seq模型（如基于RNN的模型）的主要区别在于，Transformer完全基于自注意力机制（self-attention）来捕捉序列中的依赖关系，而不依赖于循环或卷积结构，这使得它在处理长序列时具有优越的性能：<br><img src="https://bbs-img-cbc-cn.obs.cn-north-1.myhuaweicloud.com/data/attachment/forum/202101/01/215059a5naotj646bx1pel.png" alt="transformer"></p>
+<p>transformer的计算过程包括如下几个步骤：</p>
+<ul>
+<li><strong>编码器</strong>：编码器由多层相同的层叠加而成，每一层主要包括两部分：自注意力机制和全连接的前馈网络。自注意力机制用于捕捉输入序列中的全局依赖关系，全连接的前馈网络用于进行非线性变换。此外，每个子层（包括自注意力子层和全连接子层）都有一个残差连接和层归一化。</li>
+<li><strong>解码器</strong>：解码器的结构与编码器类似，也是由多层相同的层叠加而成，每一层主要包括三个部分：掩蔽注意力机制、编码器-解码器注意力机制和全连接的前馈网络。解码器的自注意力机制允许解码器在生成每个词时考虑到前面已经生成的词，编码器-解码器注意力机制则使得解码器可以关注到编码器的输出。每个子层也有一个残差连接和层归一化。</li>
+</ul>
+<h3 id="掩码"><a href="#掩码" class="headerlink" title="掩码"></a>掩码</h3><p>在使用自注意力机制时，有一个问题需要注意，那就是在生成序列的任务中，如机器翻译或者文本生成，<strong>当前的词只应该依赖于前面的词，而不应该看到后面的词</strong>。这就需要对自注意力机制进行一定的修改，即使用<strong>掩蔽多头注意力</strong></p>
+<p><em>假设我们正在生成一个英文句子，当前已经生成到”The cat is”，下一个词应该是”on”，在这个时候，我们希望模型只看到”The cat is”，而不能看到”on”，因为在实际使用时，”on”还没有被生成出来。掩蔽多头注意力就可以实现这一点。</em></p>
+<p>在掩码矩阵中，如果该元素对应的位置是要掩盖的位置，则设置为负无穷，在softmax前，将掩码矩阵和注意力分数相加，对应的注意力权重就会变成0，这样就实现了掩蔽的效果。</p>
+<h3 id="编码器-解码器注意力机制"><a href="#编码器-解码器注意力机制" class="headerlink" title="编码器-解码器注意力机制"></a>编码器-解码器注意力机制</h3><p>编码器-解码器注意力层中，Q来自前一个解码器层的输出，而K和V来自于编码器的输出。</p>
+
+  </div>
+  
+</div>
+<!-- <script type="text/javascript" src="../source/libs/codeBlock/codeBlockFuction.js"></script>
+<!-- 代码语言 -->
+<script type="text/javascript" src="../source/libs/codeBlock/codeLang.js"></script>
+<!-- 代码块复制 -->
+<script type="text/javascript" src="../source/libs/codeBlock/codeCopy.js"></script>
+<script type="text/javascript" src="../source/libs/codeBlock/clipboard.min.js"></script>
+<!-- 代码块收缩 -->
+<script type="text/javascript" src="../source/libs/codeBlock/codeShrink.js"></script> 
+<!-- 代码块折行 -->
+<style type="text/css">code[class*="language-"], pre[class*="language-"] { white-space: pre !important; }</style> -->
+          </div>
+        </div>
+
+        <link rel="stylesheet" href="/css/footer.css">
+<div class="bottom-outer">
+  <div class="copyright">©2021 - 2021 By Tanger</div>
+  <div class="framework-info">
+    <span>Power by</span>
+    <a class="a1" target="_blank" rel="noopener" href="https://hexo.io/">Hexo</a>
+    <span class="footer-separator">|</span>
+    <span>Theme by</span>
+    <a class="a2" target="_blank" rel="noopener" href="https://github.com/redhat123456/hexo-theme-MiHoYo">MiHoYo</a>
+  </div>
+</div>
+
+          
+            <!-- scripts list from theme config.yml -->
+            
+              <script src="/js/MiHoYo.js"></script>
+              
+                
+
+  </body>
+
+  </html>
