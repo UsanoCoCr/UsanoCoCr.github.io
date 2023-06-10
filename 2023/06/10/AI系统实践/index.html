@@ -1,0 +1,380 @@
+
+
+  <!DOCTYPE html>
+  <html lang="en">
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="renderer" content="webkit">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+  <meta name="description" content=一名在元培学院通用人工智能方向上学的本科生，敬上！ >
+  <meta name="keywords" content=hexo,theme,notes >
+
+  <head>
+    <title>
+      AI系统实践 [ UsanoCoCr&#39;s Blog ]
+    </title>
+  <meta name="generator" content="Hexo 6.3.0"></head>
+
+  <body>
+
+    <link rel="stylesheet" href="/css/header.css">
+<div class="header">
+  <div class="logo">
+    <span class="pull-left">
+      <a id="site-name" href="/">
+        UsanoCoCr&#39;s blog
+      </a>
+    </span>
+  </div>
+  <ul class="nav-list">
+    
+      <li>
+        <a href="/">
+          首页
+        </a>
+      </li>
+      
+  </ul>
+</div>
+
+      <!--<link rel="stylesheet" href="/css/top-header.css">
+<div id="top-bar" class="fixed">
+
+  <a class="goto-top" href="#"></a>
+  <ul class="bar-list bar-list-1">
+    
+      <li>
+        <p>
+          <a href="/">
+            <text class="bar-text bar-p1">
+              首页
+            </text>
+            <text class="bar-text bar-p2"></text>
+          </a>
+          <text class="bar-p3">/</text>
+        </p>
+      </li>
+      
+  </ul>
+</div>-->
+
+        <div id="content-outer">
+          <div class="content-inner">
+            <link rel="stylesheet" href="/css/post.css">
+<div class="posts">
+  <a href="/index.html"><i class="fa fa-home
+replay-btn" aria-hidden="true"></i></a>
+  <div class="post-title">
+    <p>
+      AI系统实践
+    </p>
+    <hr>
+  </div>
+  <div class="post-content">
+    <h1 id="AI系统实践"><a href="#AI系统实践" class="headerlink" title="AI系统实践"></a>AI系统实践</h1><h2 id="目录"><a href="#目录" class="headerlink" title="目录"></a>目录</h2><ul>
+<li><a href="#ai%E7%B3%BB%E7%BB%9F%E5%AE%9E%E8%B7%B5">AI系统实践</a><ul>
+<li><a href="#%E7%9B%AE%E5%BD%95">目录</a></li>
+<li><a href="#%E6%80%BB%E8%A7%88">总览</a></li>
+<li><a href="#1%E6%95%B0%E6%8D%AE%E8%8E%B7%E5%8F%96">1.数据获取</a><ul>
+<li><a href="#%E5%8E%9F%E5%A7%8B%E6%95%B0%E6%8D%AE%E8%8E%B7%E5%8F%96">原始数据获取</a><ul>
+<li><a href="#%E4%BF%A1%E6%81%AF%E6%8A%BD%E5%8F%96">信息抽取</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a href="#2%E6%95%B0%E6%8D%AE%E6%A0%87%E6%B3%A8%E5%8F%8A%E9%A2%84%E5%A4%84%E7%90%86">2.数据标注及预处理</a><ul>
+<li><a href="#%E6%95%B0%E6%8D%AE%E6%A0%87%E6%B3%A8">数据标注</a><ul>
+<li><a href="#1%E4%BC%97%E5%8C%85-crowdsourcing">1.众包 Crowdsourcing</a></li>
+<li><a href="#2%E5%8D%8A%E7%9B%91%E7%9D%A3%E5%AD%A6%E4%B9%A0-self-training">2.半监督学习 self-training</a></li>
+<li><a href="#3%E4%B8%BB%E5%8A%A8%E5%AD%A6%E4%B9%A0-active-learning">3.主动学习 Active Learning</a></li>
+<li><a href="#4%E5%BC%B1%E7%9B%91%E7%9D%A3%E5%AD%A6%E4%B9%A0-weakly-supervised-learning">4.弱监督学习 Weakly Supervised Learning</a></li>
+<li><a href="#4%E8%87%AA%E7%9B%91%E7%9D%A3-self-supervised-learning">4.自监督 Self-supervised Learning</a></li>
+</ul>
+</li>
+<li><a href="#%E6%95%B0%E6%8D%AE%E9%A2%84%E5%A4%84%E7%90%86">数据预处理</a><ul>
+<li><a href="#1%E6%95%B0%E6%8D%AE%E6%B8%85%E6%B4%97">1.数据清洗</a></li>
+<li><a href="#2%E6%95%B0%E6%8D%AE%E8%BD%AC%E5%8C%96">2.数据转化</a></li>
+<li><a href="#3%E7%89%B9%E5%BE%81%E5%B7%A5%E7%A8%8B">3.特征工程</a><ul>
+<li><a href="#1%E8%BF%87%E6%BB%A4%E6%B3%95-filter">1.过滤法 Filter</a></li>
+<li><a href="#2%E5%B5%8C%E5%85%A5%E6%B3%95-embedded">2.嵌入法 Embedded</a></li>
+<li><a href="#3%E5%8C%85%E8%A3%85%E6%B3%95-wrapper">3.包装法 Wrapper</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a href="#3%E5%BB%BA%E6%A8%A1%E4%B8%8E%E8%B0%83%E5%8F%82">3.建模与调参</a><ul>
+<li><a href="#%E6%A8%A1%E5%9E%8B%E9%9B%86%E6%88%90">模型集成</a><ul>
+<li><a href="#1bagging">1.Bagging</a></li>
+<li><a href="#2boosting">2.Boosting</a></li>
+<li><a href="#3stacking">3.Stacking</a></li>
+</ul>
+</li>
+<li><a href="#%E6%A8%A1%E5%9E%8B%E6%B5%8B%E8%AF%95">模型测试</a></li>
+<li><a href="#%E8%B0%83%E5%8F%82">调参</a><ul>
+<li><a href="#%E8%B6%85%E5%8F%82%E6%95%B0%E4%BC%98%E5%8C%96-hyper-parameter-optimization">超参数优化 Hyper Parameter Optimization</a></li>
+<li><a href="#%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C%E6%9E%B6%E6%9E%84%E6%90%9C%E7%B4%A2-neural-architecture-search">神经网络架构搜索 Neural Architecture Search</a></li>
+</ul>
+</li>
+<li><a href="#%E6%A8%A1%E5%9E%8B%E7%9B%91%E6%8E%A7">模型监控</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h2 id="总览"><a href="#总览" class="headerlink" title="总览"></a>总览</h2><ul>
+<li><strong>AI系统实践的流水线：</strong><br>数据获取 -&gt; 数据预处理 -&gt; 建模与调参 -&gt; 系统部署 -&gt; 持续维护</li>
+</ul>
+<p>以Kaggle房价预测为例：</p>
+<ul>
+<li>数据获取：获取历史房屋信息及售价</li>
+<li>数据预处理：数据清洗、数据分析、特征工程、特征选择、数据集划分</li>
+<li>建模与调参：选择模型、训练线性模型、调参</li>
+<li>系统部署：在线部署模型预测新房屋的售价</li>
+<li>持续维护：获得新数据、更新训练模型、预测准确率监控</li>
+</ul>
+<h2 id="1-数据获取"><a href="#1-数据获取" class="headerlink" title="1.数据获取"></a>1.数据获取</h2><p>在现在的网络上有各种公开的数据集可以使用，各类数据集的优缺点如下：</p>
+<table>
+<thead>
+<tr>
+<th align="center">数据集</th>
+<th align="center">优点</th>
+<th align="center">缺点</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">学术论文数据集</td>
+<td align="center">1.质量较高 2.难度适中 3.可与其他论文对比</td>
+<td align="center">1.选择少 2.规模相对较小 3.特征属性相对简单</td>
+</tr>
+<tr>
+<td align="center">企业&#x2F;竞赛数据集</td>
+<td align="center">1.更贴近实际使用</td>
+<td align="center">1.只有热门问题 2.由于隐私等问题对数据匿名化</td>
+</tr>
+</tbody></table>
+<h3 id="原始数据获取"><a href="#原始数据获取" class="headerlink" title="原始数据获取"></a>原始数据获取</h3><ul>
+<li>爬虫Web Crawling：类似谷歌、百度，储存整个网页</li>
+<li>数据抽取 Scraping：仅保留网页中特定需要的数据</li>
+</ul>
+<p>Scraping&#x3D;Web Crawling+Data Extraction</p>
+<h4 id="信息抽取"><a href="#信息抽取" class="headerlink" title="信息抽取"></a>信息抽取</h4><ul>
+<li>信息抽取一共有两类方法，分别是基于API以及基于网页<br>网页数据抽取包括运行代码模拟浏览器访问网页，以及从网页中抽取关键数据</li>
+</ul>
+<p><strong>数据抽取的注意点：</strong></p>
+<ul>
+<li>1.设置参数模拟真实浏览器</li>
+<li>2.请求频率不要过高</li>
+<li><ol start="3">
+<li><strong>请求被拒绝后更换IP</strong></li>
+</ol>
+</li>
+</ul>
+<p>从网页抽取数据时的注意事项：</p>
+<ul>
+<li>不要抓取敏感内容的信息</li>
+<li>不要抓取包含版权的信息</li>
+<li>商用前一定要咨询法律专业人员</li>
+</ul>
+<h2 id="2-数据标注及预处理"><a href="#2-数据标注及预处理" class="headerlink" title="2.数据标注及预处理"></a>2.数据标注及预处理</h2><h3 id="数据标注"><a href="#数据标注" class="headerlink" title="数据标注"></a>数据标注</h3><h4 id="1-众包-Crowdsourcing"><a href="#1-众包-Crowdsourcing" class="headerlink" title="1.众包 Crowdsourcing"></a>1.众包 Crowdsourcing</h4><p>将数据标注任务发布到众包平台，由众包工人完成标注任务</p>
+<p>众包的质量保障：标记者可能会犯错误，并且可能无法理解说明。</p>
+<ul>
+<li>最简单但最昂贵的方法：将同一任务发送给多个标记者，然后通过多数表决确定标签</li>
+<li>改进方法：对于有争议的示例进行更多重复操作，去除低质量的标记者（加权投票，计算每个标注者和Truth的一致性）<br><img src="https://th.bing.com/th/id/OIP.LNp1Wm8rAt8LeiBeMOvZhwHaEf?w=278&h=180&c=7&r=0&o=5&dpr=1.8&pid=1.7" alt="crowdsourcing"></li>
+</ul>
+<h4 id="2-半监督学习-self-training"><a href="#2-半监督学习-self-training" class="headerlink" title="2.半监督学习 self-training"></a>2.半监督学习 self-training</h4><ul>
+<li>利用已经标记的部分数据训练一个还不错的模型</li>
+<li>用这个模型预测得到的结果，选择置信度高的样本作为预测伪标签，把这些样本加入训练集重新训练</li>
+</ul>
+<p>半监督和监督学习的区别：半监督输入同时包括标注和未标注数据</p>
+<p>注意：</p>
+<ul>
+<li>未标注的训练样本和测试样本是不同的</li>
+<li>真实场景时测试样本是未知的</li>
+<li>计算成本较高，虽然半监督减少了标注成本，但是增加了计算成本</li>
+<li><strong>误差累积</strong>：预测的高置信度样本可能是错误预测，产生误差累积（置信度阈值高，预测错误概率小，但可增加的伪标签样本同样也变少了）</li>
+</ul>
+<p><strong>高置信度样本采用预测伪标签（半监督）、低置信度样本采用人工标注（众包）</strong><br><strong>挑选特定样本进行标注的过程也叫主动学习Active Learning</strong></p>
+<h4 id="3-主动学习-Active-Learning"><a href="#3-主动学习-Active-Learning" class="headerlink" title="3.主动学习 Active Learning"></a>3.主动学习 Active Learning</h4><p>主动学习中模型会选择最有趣的数据供标记着标记，即“人在回路”(Human in the loop)</p>
+<ul>
+<li>不确定性采样Uncertainty Sampling：选择预测最不确定的示例，最高类别预测得分接近$\frac{1}{n}$</li>
+<li>委员会查询Query-by-committee：训练多个模型，选择它们预测不一致的样本</li>
+</ul>
+<h4 id="4-弱监督学习-Weakly-Supervised-Learning"><a href="#4-弱监督学习-Weakly-Supervised-Learning" class="headerlink" title="4.弱监督学习 Weakly Supervised Learning"></a>4.弱监督学习 Weakly Supervised Learning</h4><p>通过自动化或半自动化生成的标签进行模型训练</p>
+<ul>
+<li><strong>一种弱监督学习策略-数据编程</strong>：使用领域特定知识（启发式规则）进行标注；如关键词、字符串模式匹配、第三方模型。（相当于人工补充缺省数据）</li>
+</ul>
+<h4 id="4-自监督-Self-supervised-Learning"><a href="#4-自监督-Self-supervised-Learning" class="headerlink" title="4.自监督 Self-supervised Learning"></a>4.自监督 Self-supervised Learning</h4><ul>
+<li>自监督学习：通过数据自身构造预测标签的学习方法</li>
+<li>文本自监督学习：预测下一个词(GPT)、完形填空(BERT)</li>
+<li>图像自监督学习：视频预测下一帧、拼图、对比学习</li>
+</ul>
+<p>自监督学习主要用于训练特征提取器，针对特定任务，通常仍需要相关标注数据</p>
+<ul>
+<li><strong>对比学习</strong>：同一个图像经过不同的增强方式得到样本对，作为正样本；随机选取两个不同图像增强得到样本对，作为负样本</li>
+</ul>
+<h3 id="数据预处理"><a href="#数据预处理" class="headerlink" title="数据预处理"></a>数据预处理</h3><p><strong>数据预处理包括数据清洗、数据转化和特征工程</strong></p>
+<h4 id="1-数据清洗"><a href="#1-数据清洗" class="headerlink" title="1.数据清洗"></a>1.数据清洗</h4><p>数据清洗的目标是消除错误的数据，包括：异常值、规则违反（不为空、唯一、非负等要求）、模式违反（格式错误、拼写错误）</p>
+<p>基于规则的检验：</p>
+<ul>
+<li>可以通过探索性分析（可视化）发现异常值</li>
+<li>根据领域&#x2F;先验知识设计规则可以识别错误记录</li>
+</ul>
+<p>基于模式的检验：</p>
+<ul>
+<li>语法模式：例如，将一列特征值映射到最常见的那个值并不匹配的值 eng、en、English-&gt;en</li>
+<li>语义模式：如通过知识图谱添加规则</li>
+</ul>
+<p><strong>在处理缺失数据时，可以使用直接删除缺失严重的特征或样本，也可以使用填充的方法，如均值&#x2F;中位数、线性插值、机器学习方法</strong><br>（直接删除缺失值在缺失比例较少时适用，不建议直接使用）</p>
+<h4 id="2-数据转化"><a href="#2-数据转化" class="headerlink" title="2.数据转化"></a>2.数据转化</h4><ul>
+<li>归一化&#x2F;规范化：将有不同尺度&#x2F;范围的变量转换为相同比例，<strong>有助于消除不同变量之间的比例差异</strong></li>
+<li>裁剪、降分辨率、压缩：减少数据集需要占用的空间，加快训练速度，但是可能带来一定的性能损失</li>
+</ul>
+<h4 id="3-特征工程"><a href="#3-特征工程" class="headerlink" title="3.特征工程"></a>3.特征工程</h4><p>在特征工程中可以进行特征选择，特征选择的作用是：</p>
+<ul>
+<li>删除无关特征</li>
+<li>提升模型性能</li>
+<li>训练速度变快</li>
+<li>部署系统时需要数据变少</li>
+<li>模型更易于理解</li>
+<li>模型表现异常时更容易debug</li>
+</ul>
+<p>特征选择的方法：过滤法、包装法、嵌入法</p>
+<h5 id="1-过滤法-Filter"><a href="#1-过滤法-Filter" class="headerlink" title="1.过滤法 Filter"></a>1.过滤法 Filter</h5><p>根据特征本身的属性进行选择，如相关系数法等</p>
+<ul>
+<li>优点：简单易行、速度快、无需建模</li>
+<li>缺点：一般无法考虑特征之间的相关性，容易选取冗余特征</li>
+</ul>
+<h5 id="2-嵌入法-Embedded"><a href="#2-嵌入法-Embedded" class="headerlink" title="2.嵌入法 Embedded"></a>2.嵌入法 Embedded</h5><p>将特征选择过程嵌入到模型训练过程中，如使用L1正则化的线性模型</p>
+<ul>
+<li>优点：能够考虑特征之间的相关性</li>
+<li>缺点：特定于某些模型，未必对其他模型表现好</li>
+</ul>
+<p>在L1正则化下，大部分系数接近0，剩下的绝对值较大的系数对应更重要的特征</p>
+<p><strong>Gini重要性&#x2F;Gini不纯度：</strong> Gini不纯度是一种衡量一个节点的不纯度（或混乱程度）的指标。如果一个节点中的所有样本都属于同一类别，那么Gini不纯度就为0，表示这个节点是纯净的。如果一个节点中的样本均匀地分布在多个类别中，那么Gini不纯度就最大，表示这个节点最混乱。<strong>Gini重要性提供了一种量化特征对模型预测性能的影响的方法。如果一个特征的Gini重要性大，那么它在模型中的作用就更大，反之则更小。</strong></p>
+<p>我们可以使用随机森林Random Forest的方法进行多棵决策树的集成学习，是常用于针对表格数据的机器学习方法。</p>
+<ul>
+<li><strong>集成学习</strong> ：构建多个模型，用某种策略将多个结果集成起来，作为最终结果</li>
+</ul>
+<h5 id="3-包装法-Wrapper"><a href="#3-包装法-Wrapper" class="headerlink" title="3.包装法 Wrapper"></a>3.包装法 Wrapper</h5><p>包装法将特征选择看作一个搜索问题，通过训练模型并评估模型效果来选择特征</p>
+<ul>
+<li>优点：可以考虑特征之间的相关性，可以针对任意模型</li>
+<li>缺点：计算复杂度高，容易过拟合</li>
+</ul>
+<h2 id="3-建模与调参"><a href="#3-建模与调参" class="headerlink" title="3.建模与调参"></a>3.建模与调参</h2><h3 id="模型集成"><a href="#模型集成" class="headerlink" title="模型集成"></a>模型集成</h3><p>我们可以如此定义模型的误差$error$：<br>$$<br>error &#x3D; E[(y-\hat{y})^2] \<br>error &#x3D; (y-E[\hat{y}])^2 + E[(\hat{y}-E[\hat{y}])^2]<br>$$<br>其中，第一项为偏差$bias^2$，第二项为方差$variance$，偏差衡量了模型的拟合能力（欠拟合），方差衡量了模型的稳定性（过拟合）。</p>
+<ul>
+<li>模型越复杂，偏差越小，方差越大</li>
+<li>模型越简单，偏差越大，方差越小</li>
+</ul>
+<p>使用集成学习的方法，可以有效减少bias和variance，如<strong>Bagging（降低variance）、Boosting（降低bias）、Stacking（降低variance）</strong> 等</p>
+<h4 id="1-Bagging"><a href="#1-Bagging" class="headerlink" title="1.Bagging"></a>1.Bagging</h4><p>Bagging是一种并行学习n个基础模型，组合减少variance的方法，如<strong>随机森林Random Forest就是决策树的Bagging</strong></p>
+<ul>
+<li>Bagging更适合决策树，而不适用于稳定的分类器</li>
+</ul>
+<h4 id="2-Boosting"><a href="#2-Boosting" class="headerlink" title="2.Boosting"></a>2.Boosting</h4><p>Boosting是一种串行学习n个基础模型，组合减少bias的方法，如<strong>Adaboost、GBDT、XGBoost、LightGBM等</strong></p>
+<h4 id="3-Stacking"><a href="#3-Stacking" class="headerlink" title="3.Stacking"></a>3.Stacking</h4><p>Stacking类似Bagging，组合多个base learner减少variance，但是不同的是，Stacking的base learner是不同的模型，而不是同一种模型的不同实例</p>
+<ul>
+<li><p>Stacking在机器学习竞赛中被广泛采用，可以快速组合多个不同队伍的结果</p>
+</li>
+<li><p><strong>多层Stacking</strong> ：下层Stacking的输出作为上层Stacking的输入，可以进一步提升性能</p>
+</li>
+</ul>
+<h3 id="模型测试"><a href="#模型测试" class="headerlink" title="模型测试"></a>模型测试</h3><ul>
+<li>可以使用交叉验证的方法进行模型测试</li>
+<li><strong>AUC-ROC</strong>： ROC曲线纵坐标为TPR，横坐标为FPR，AUC为ROC曲线下的面积，AUC越大，模型性能越好<br>TP: True Positive，真正例，预测为正，实际为正<br>TN: True Negative，真负例，预测为负，实际为负<br>FP: False Positive，假正例，预测为正，实际为负<br>FN: False Negative，假负例，预测为负，实际为正<br>$$<br>TPR &#x3D; \frac{TP}{TP+FN} \<br>FPR &#x3D; \frac{FP}{FP+TN}<br>$$</li>
+</ul>
+<h3 id="调参"><a href="#调参" class="headerlink" title="调参"></a>调参</h3><ul>
+<li>一次只变更一个超参数</li>
+<li>每个超参数重复并系统性尝试3-5个不同的值</li>
+<li>记录每个尝试的超参数设置和相应的性能</li>
+<li>有时会出现鸡肋-&gt;固定这个超参数，调整其他的</li>
+<li>探索较广范围超参数但是性能并未显著提高-&gt;可能是模型本身的问题</li>
+</ul>
+<h4 id="超参数优化-Hyper-Parameter-Optimization"><a href="#超参数优化-Hyper-Parameter-Optimization" class="headerlink" title="超参数优化 Hyper Parameter Optimization"></a>超参数优化 Hyper Parameter Optimization</h4><p>通过搜索算法找到一组好的超参数</p>
+<ul>
+<li>搜索空间随超参数个数指数级增长</li>
+</ul>
+<p>在HPO中将训练任务视为黑盒，完成每次实验的训练过程。<br><strong>使用多粒度方法可以显著加速HPO</strong>：</p>
+<ul>
+<li>在子数据集上进行训练</li>
+<li>减小模型大小</li>
+<li>早停</li>
+</ul>
+<p>HPO的一些经典算法：</p>
+<ul>
+<li>网格搜索 Grid Search</li>
+<li>随机搜索 Random Search</li>
+<li><strong>逐次减半法 Successive Halving</strong> ：<br>1.选择一定的超参数配置<br>2.对这n个配置同时进行训练t个epoch<br>3.选择性能最好的一半配置，训练2t个epoch<br>4.重复步骤3，直到只剩下一个配置，选择最后的配置即为HPO的结果</li>
+</ul>
+<p><strong>难点：很难确定初始的n</strong></p>
+<p>Hyper-Band：结合了逐次减半的思想</p>
+<h4 id="神经网络架构搜索-Neural-Architecture-Search"><a href="#神经网络架构搜索-Neural-Architecture-Search" class="headerlink" title="神经网络架构搜索 Neural Architecture Search"></a>神经网络架构搜索 Neural Architecture Search</h4><p>构建一个好的神经网络模型</p>
+<ul>
+<li>强化学习：速度慢</li>
+<li>One-Shot：结合架构学习和模型参数学习</li>
+</ul>
+<p><strong>可微架构搜索 Differentiable Architecture Search</strong>：</p>
+<ul>
+<li>1.为每层定义多个候选运算</li>
+<li>2.使用Softmax函数将每个运算的概率归一化</li>
+<li>3.网络前向过程实际上是学习这些运算的权重，优化参数同时优化权重</li>
+<li>4.权重最大的运算即为最终的运算</li>
+<li>5.最终选择每层运算作为NAS的结果架构</li>
+</ul>
+<h3 id="模型监控"><a href="#模型监控" class="headerlink" title="模型监控"></a>模型监控</h3><ul>
+<li>监控什么？开始可以选择多一些监控指标，再慢慢删掉没有用的那些</li>
+<li>设置阈值触发警报，随着时间阈值需要进行调整</li>
+</ul>
+<p><strong>模型监控的工作优先级</strong>：</p>
+<ul>
+<li>改进空间有多大：改进空间最大的应优先考虑</li>
+<li>该类别出现的频率有多高：频率高的类别可以最大限度地提高总体准确率，应作为重点考虑</li>
+<li>提高该类别准确率的难易度有多大：难度小的应优先考虑，以获得快速收益</li>
+<li>提高该类别的重要性有多大</li>
+</ul>
+<p>改进手段：</p>
+<ul>
+<li>1.获取更多数据</li>
+<li>2.使用数据增强</li>
+<li>3.提高标签准确率&#x2F;数据质量</li>
+</ul>
+
+  </div>
+  
+</div>
+<!-- <script type="text/javascript" src="../source/libs/codeBlock/codeBlockFuction.js"></script>
+<!-- 代码语言 -->
+<script type="text/javascript" src="../source/libs/codeBlock/codeLang.js"></script>
+<!-- 代码块复制 -->
+<script type="text/javascript" src="../source/libs/codeBlock/codeCopy.js"></script>
+<script type="text/javascript" src="../source/libs/codeBlock/clipboard.min.js"></script>
+<!-- 代码块收缩 -->
+<script type="text/javascript" src="../source/libs/codeBlock/codeShrink.js"></script> 
+<!-- 代码块折行 -->
+<style type="text/css">code[class*="language-"], pre[class*="language-"] { white-space: pre !important; }</style> -->
+          </div>
+        </div>
+
+        <link rel="stylesheet" href="/css/footer.css">
+<div class="bottom-outer">
+  <div class="copyright">©2021 - 2021 By Tanger</div>
+  <div class="framework-info">
+    <span>Power by</span>
+    <a class="a1" target="_blank" rel="noopener" href="https://hexo.io/">Hexo</a>
+    <span class="footer-separator">|</span>
+    <span>Theme by</span>
+    <a class="a2" target="_blank" rel="noopener" href="https://github.com/redhat123456/hexo-theme-MiHoYo">MiHoYo</a>
+  </div>
+</div>
+
+          
+            <!-- scripts list from theme config.yml -->
+            
+              <script src="/js/MiHoYo.js"></script>
+              
+                
+
+  </body>
+
+  </html>
