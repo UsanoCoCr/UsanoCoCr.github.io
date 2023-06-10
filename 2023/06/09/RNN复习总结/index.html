@@ -101,6 +101,7 @@ replay-btn" aria-hidden="true"></i></a>
 <li><a href="#%E7%BC%96%E7%A0%81%E5%99%A8-%E8%A7%A3%E7%A0%81%E5%99%A8%E6%B3%A8%E6%84%8F%E5%8A%9B%E6%9C%BA%E5%88%B6">编码器-解码器注意力机制</a></li>
 </ul>
 </li>
+<li><a href="#gpt%E5%92%8Cbert">GPT和BERT</a></li>
 </ul>
 </li>
 </ul>
@@ -159,6 +160,12 @@ replay-btn" aria-hidden="true"></i></a>
 <p><em>假设我们正在生成一个英文句子，当前已经生成到”The cat is”，下一个词应该是”on”，在这个时候，我们希望模型只看到”The cat is”，而不能看到”on”，因为在实际使用时，”on”还没有被生成出来。掩蔽多头注意力就可以实现这一点。</em></p>
 <p>在掩码矩阵中，如果该元素对应的位置是要掩盖的位置，则设置为负无穷，在softmax前，将掩码矩阵和注意力分数相加，对应的注意力权重就会变成0，这样就实现了掩蔽的效果。</p>
 <h3 id="编码器-解码器注意力机制"><a href="#编码器-解码器注意力机制" class="headerlink" title="编码器-解码器注意力机制"></a>编码器-解码器注意力机制</h3><p>编码器-解码器注意力层中，Q来自前一个解码器层的输出，而K和V来自于编码器的输出。</p>
+<h2 id="GPT和BERT"><a href="#GPT和BERT" class="headerlink" title="GPT和BERT"></a>GPT和BERT</h2><p>GPT的目标是根据上文，最大化对下一个词的预测概率，而BERT的目标是根据上下文，完成MLM和NSP两个任务：</p>
+<ul>
+<li>MLM：Masked Language Model，即遮蔽语言模型，是BERT的主要训练目标。在训练过程中，BERT会随机遮蔽输入序列中的一些词，然后让模型预测这些被遮蔽的词。（完形填空）</li>
+<li>NSP：Next Sentence Prediction，即下一句预测，是BERT的辅助训练目标。在训练过程中，BERT会随机选择两个句子，然后让模型判断这两个句子是否是上下文关系。</li>
+</ul>
+<p>在训练过程中，大语言模型的参数规模提升会带来能力的<strong>涌现</strong></p>
 
   </div>
   
