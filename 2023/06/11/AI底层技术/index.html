@@ -1,0 +1,237 @@
+
+
+  <!DOCTYPE html>
+  <html lang="en">
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="renderer" content="webkit">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+  <meta name="description" content=一名在元培学院通用人工智能方向上学的本科生，敬上！ >
+  <meta name="keywords" content=hexo,theme,notes >
+
+  <head>
+    <title>
+      AI底层技术 [ UsanoCoCr&#39;s Blog ]
+    </title>
+  <meta name="generator" content="Hexo 6.3.0"></head>
+
+  <body>
+
+    <link rel="stylesheet" href="/css/header.css">
+<div class="header">
+  <div class="logo">
+    <span class="pull-left">
+      <a id="site-name" href="/">
+        UsanoCoCr&#39;s blog
+      </a>
+    </span>
+  </div>
+  <ul class="nav-list">
+    
+      <li>
+        <a href="/">
+          首页
+        </a>
+      </li>
+      
+  </ul>
+</div>
+
+      <!--<link rel="stylesheet" href="/css/top-header.css">
+<div id="top-bar" class="fixed">
+
+  <a class="goto-top" href="#"></a>
+  <ul class="bar-list bar-list-1">
+    
+      <li>
+        <p>
+          <a href="/">
+            <text class="bar-text bar-p1">
+              首页
+            </text>
+            <text class="bar-text bar-p2"></text>
+          </a>
+          <text class="bar-p3">/</text>
+        </p>
+      </li>
+      
+  </ul>
+</div>-->
+
+        <div id="content-outer">
+          <div class="content-inner">
+            <link rel="stylesheet" href="/css/post.css">
+<div class="posts">
+  <a href="/index.html"><i class="fa fa-home
+replay-btn" aria-hidden="true"></i></a>
+  <div class="post-title">
+    <p>
+      AI底层技术
+    </p>
+    <hr>
+  </div>
+  <div class="post-content">
+    <h1 id="AI底层技术"><a href="#AI底层技术" class="headerlink" title="AI底层技术"></a>AI底层技术</h1><h2 id="目录"><a href="#目录" class="headerlink" title="目录"></a>目录</h2><ul>
+<li><a href="#ai%E5%BA%95%E5%B1%82%E6%8A%80%E6%9C%AF">AI底层技术</a><ul>
+<li><a href="#%E7%9B%AE%E5%BD%95">目录</a></li>
+<li><a href="#1%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E7%BC%96%E7%A8%8B%E6%A8%A1%E5%9E%8B">1.机器学习编程模型</a></li>
+<li><a href="#2%E8%AE%A1%E7%AE%97%E5%9B%BE-computational-graph">2.计算图 Computational Graph</a><ul>
+<li><a href="#%E7%9B%AE%E7%9A%84">目的</a></li>
+<li><a href="#%E8%AE%A1%E7%AE%97%E5%9B%BE%E7%9A%84%E5%9F%BA%E6%9C%AC%E6%9E%84%E6%88%90">计算图的基本构成</a></li>
+<li><a href="#%E8%AE%A1%E7%AE%97%E5%9B%BE%E7%9A%84%E5%9F%BA%E6%9C%AC%E6%9E%84%E6%88%90-1">计算图的基本构成</a></li>
+<li><a href="#%E8%AE%A1%E7%AE%97%E5%9B%BE%E7%9A%84%E7%94%9F%E6%88%90">计算图的生成</a><ul>
+<li><a href="#1%E9%9D%99%E6%80%81%E7%94%9F%E6%88%90graph">1.静态生成Graph</a></li>
+<li><a href="#2%E5%8A%A8%E6%80%81%E7%94%9F%E6%88%90eager">2.动态生成Eager</a></li>
+</ul>
+</li>
+<li><a href="#%E8%AE%A1%E7%AE%97%E5%9B%BE%E7%9A%84%E6%89%A7%E8%A1%8C">计算图的执行</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h2 id="1-机器学习编程模型"><a href="#1-机器学习编程模型" class="headerlink" title="1.机器学习编程模型"></a>1.机器学习编程模型</h2><p>机器学习模型在不断的迭代中，逐渐的可以高效编写机器学习程序。</p>
+<p>机器学习工作流：</p>
+<ul>
+<li>数据处理 Data Preprocess API</li>
+<li>模型定义 Neural Network API</li>
+<li>损失函数和优化器 Optimizers API</li>
+<li>训练过程 Training API</li>
+<li>测试和验证 Testing API</li>
+</ul>
+<p>现代机器学习框架大量使用了C&#x2F;C++的编程接口，最常见的方法有：</p>
+<ul>
+<li>Python的C-API</li>
+<li>简单包装界面产生器SWIG</li>
+<li>Python的ctypes库</li>
+<li>CPython</li>
+<li>Boost::Python</li>
+</ul>
+<h2 id="2-计算图-Computational-Graph"><a href="#2-计算图-Computational-Graph" class="headerlink" title="2.计算图 Computational Graph"></a>2.计算图 Computational Graph</h2><p>在解决了高效编写机器学习程序的问题后，下一个问题是：</p>
+<ul>
+<li>机器学习系统如何高效的在硬件上执行这些程序<ul>
+<li>如何对机器学习程序描述的模型调度执行</li>
+<li>如何使模型调度执行更加高效</li>
+<li>如何自动计算更新模型所需的梯度</li>
+</ul>
+</li>
+</ul>
+<p>使用计算图技术可以解决这些问题。</p>
+<h3 id="目的"><a href="#目的" class="headerlink" title="目的"></a>目的</h3><p>早期AI框架的局限性是：</p>
+<ul>
+<li>对序贯网络支持性较好，但是很难支持更加复杂的网络结构，如RNN、GAN</li>
+<li>对梯度和参数更新策略更复杂的优化器支持较差</li>
+</ul>
+<p>基于计算图的AI计算框架包括：Tensorflow、PyTorch、PaddlePaddle等。<br><strong>计算图用通用的数据结构来表达、理解神经网络模型</strong></p>
+<h3 id="计算图的基本构成"><a href="#计算图的基本构成" class="headerlink" title="计算图的基本构成"></a>计算图的基本构成</h3><p>计算图由张量和运算单元算子完成；用节点来表示算子，用有向边来表示张量状态，同时也描述了计算间的依赖关系。</p>
+<p><strong>张量</strong>不仅存储数据，还需要存储张量的属性，包括：</p>
+<ul>
+<li>形状shape：存储张量每个维度的长度</li>
+<li>秩&#x2F;维数dim：表示张量的轴数或者维数</li>
+<li>数据类型dtype：表示张量中数据的类型</li>
+<li>存储位置device：表示张量存储的设备位置</li>
+</ul>
+<p><strong>算子</strong>是构成神经网络的基本计算单元</p>
+<ul>
+<li>数值计算：add、mul、tanh、div等</li>
+<li>形态变换：resize、stack、concat等</li>
+<li>神经网络算子：loss、activation等</li>
+<li>控制流算子：if、while等</li>
+</ul>
+<h3 id="计算图的基本构成-1"><a href="#计算图的基本构成-1" class="headerlink" title="计算图的基本构成"></a>计算图的基本构成</h3><p><img src="https://img-blog.csdnimg.cn/20201028121913639.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3R1Z291eHA=,size_16,color_FFFFFF,t_70" alt="计算图"><br>计算图中的算子有相互依赖的关系：</p>
+<ul>
+<li>相互独立：节点间无数据流动</li>
+<li>直接依赖：节点间数据的输出是下一个节点的输入</li>
+<li>间接依赖：节点间数据经过了一个或多个中间节点进行处理</li>
+</ul>
+<p>依赖关系影响了算子的<strong>执行顺序与并行</strong>的情况。</p>
+<p>计算图中的控制流同时对计算图的前向计算和反向梯度计算产生影响。</p>
+<h3 id="计算图的生成"><a href="#计算图的生成" class="headerlink" title="计算图的生成"></a>计算图的生成</h3><p>计算图分为静态生成Graph和动态生成Eager两种方式。Tensorflow采用的是define and run的静态生成的方式；Pytorch采用的是define by run的动态生成的方式。</p>
+<h4 id="1-静态生成Graph"><a href="#1-静态生成Graph" class="headerlink" title="1.静态生成Graph"></a>1.静态生成Graph</h4><p>静态图生成事先定义好整体网络结果并进行全局编译优化，再进行计算。该方式有利于性能的提升，也利于模型的保存和部署，但是在编译调试灵活性上有所欠缺。</p>
+<h4 id="2-动态生成Eager"><a href="#2-动态生成Eager" class="headerlink" title="2.动态生成Eager"></a>2.动态生成Eager</h4><p>动态图写一行代码即可即时获得结果，在编程体验、调试便捷性等方面有绝佳的优势。</p>
+<p>可以用一个表格来清楚的展示两种计算图的优劣：</p>
+<table>
+<thead>
+<tr>
+<th align="center"></th>
+<th align="center">静态图</th>
+<th align="center">动态图</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">即时获取中间结果</td>
+<td align="center">否</td>
+<td align="center">是</td>
+</tr>
+<tr>
+<td align="center">代码调试难易</td>
+<td align="center">难</td>
+<td align="center">易</td>
+</tr>
+<tr>
+<td align="center">控制流实现方式</td>
+<td align="center">特定的语法</td>
+<td align="center">前端语言语法</td>
+</tr>
+<tr>
+<td align="center">性能</td>
+<td align="center">优化策略多，性能更佳</td>
+<td align="center">图优化首先，性能较差</td>
+</tr>
+<tr>
+<td align="center">内存占用</td>
+<td align="center">少</td>
+<td align="center">相对较多</td>
+</tr>
+</tbody></table>
+<p>动态图可以通过追踪转换&#x2F;源码转换生成静态图：</p>
+<ul>
+<li>追踪转换Trace：以动态图模式执行并记录调度的算子，构建和保存为静态图模型</li>
+<li>源码转换Compile：分析前端代码来使动态图代码自动转写为静态图代码，并在底层自动帮助用户使用静态图执行器运行</li>
+</ul>
+<h3 id="计算图的执行"><a href="#计算图的执行" class="headerlink" title="计算图的执行"></a>计算图的执行</h3><p>在执行计算图时，可以根据计算图的特点进行并行：</p>
+<ul>
+<li>算子并行：在相互独立的算子间实现，也可以将单个算子合理的切分为相互独立的多个子操作</li>
+<li>模型并行：将整体计算图进行合理的切分，分配到不同的设备上执行</li>
+<li>数据并行：同时以不同的数据训练多个相同结构的计算图，减少训练迭代次数</li>
+</ul>
+<p>TensorlayerX的思想是：对于分离的开发环境生态，可以通过统一的计算图来实现不同框架的模型训练和部署。</p>
+
+  </div>
+  
+</div>
+<!-- <script type="text/javascript" src="../source/libs/codeBlock/codeBlockFuction.js"></script>
+<!-- 代码语言 -->
+<script type="text/javascript" src="../source/libs/codeBlock/codeLang.js"></script>
+<!-- 代码块复制 -->
+<script type="text/javascript" src="../source/libs/codeBlock/codeCopy.js"></script>
+<script type="text/javascript" src="../source/libs/codeBlock/clipboard.min.js"></script>
+<!-- 代码块收缩 -->
+<script type="text/javascript" src="../source/libs/codeBlock/codeShrink.js"></script> 
+<!-- 代码块折行 -->
+<style type="text/css">code[class*="language-"], pre[class*="language-"] { white-space: pre !important; }</style> -->
+          </div>
+        </div>
+
+        <link rel="stylesheet" href="/css/footer.css">
+<div class="bottom-outer">
+  <div class="copyright">©2021 - 2021 By Tanger</div>
+  <div class="framework-info">
+    <span>Power by</span>
+    <a class="a1" target="_blank" rel="noopener" href="https://hexo.io/">Hexo</a>
+    <span class="footer-separator">|</span>
+    <span>Theme by</span>
+    <a class="a2" target="_blank" rel="noopener" href="https://github.com/redhat123456/hexo-theme-MiHoYo">MiHoYo</a>
+  </div>
+</div>
+
+          
+            <!-- scripts list from theme config.yml -->
+            
+              <script src="/js/MiHoYo.js"></script>
+              
+                
+
+  </body>
+
+  </html>
